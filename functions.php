@@ -221,6 +221,12 @@ function daowa_scripts() {
 
 	wp_style_add_data( 'daowa-style', 'rtl', 'replace' );
 
+	wp_enqueue_script( 'jquery', get_theme_file_uri( '/js/jquery.min.js' ), array(), '1.1', true );
+	wp_enqueue_script( 'bootstrap', get_theme_file_uri( '/js/bootstrap.min.js' ), array(), '1.1', true );
+	wp_enqueue_script( 'smooth-scroll', get_theme_file_uri( '/js/smooth-scroll.min.js' ), array(), '1.1', true );
+	wp_enqueue_script( 'parallax', get_theme_file_uri( '/js/parallax.js' ), array(), '1.1', true );
+	wp_enqueue_script( 'scripts', get_theme_file_uri( '/js/scripts.js' ), array(), '1.1', true );
+
 	if ( has_nav_menu( 'menu-1' ) ) {
 		wp_enqueue_script( 'daowa-priority-menu', get_theme_file_uri( '/js/priority-menu.js' ), array(), '1.1', true );
 		wp_enqueue_script( 'daowa-touch-navigation', get_theme_file_uri( '/js/touch-keyboard-navigation.js' ), array(), '1.1', true );
