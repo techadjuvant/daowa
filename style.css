@@ -11857,7 +11857,8 @@ select,
 textarea {
   margin-bottom: 24px;
   margin-top: 0;
-  padding: 0; }
+  padding: 0;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 h1,
 h2,
@@ -11871,7 +11872,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  /* font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; */ }
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 h1,
 h2,
@@ -11962,7 +11963,7 @@ h2.uppercase {
   margin-right: -10px; }
 
 h3.uppercase {
-  letter-spacing: 6px;
+  letter-spacing: 3px;
   margin-right: -6px; }
 
 h4.uppercase {
@@ -11979,7 +11980,7 @@ h6.uppercase,
   font-weight: 700; }
 
 .bold-h6 {
-  /* font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   line-height: 24px;
   font-weight: 400;
@@ -12044,7 +12045,7 @@ a:hover {
   text-decoration: none; }
 
 .label {
-  /* font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   line-height: 24px;
   font-weight: 400;
@@ -12060,7 +12061,7 @@ a:hover {
 
 blockquote {
   overflow: hidden;
-  /* font-family: "Merriweather", "Georgia", Times New Roman, Times, serif; */
+  font-family: "Merriweather", "Georgia", Times New Roman, Times, serif;
   font-size: 20px;
   line-height: 40px;
   font-style: italic;
@@ -12078,9 +12079,6 @@ blockquote .author {
   display: block;
   float: right;
   margin-top: 16px; }
-
-.number {
-  /* font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif; */ }
 
 .columns-2 {
   column-count: 2;
@@ -12277,8 +12275,7 @@ footer.bg-dark li,
   -webkit-transition: all 0s ease !important;
   transition: all 0s ease !important;
   -webkit-transition: opacity 0.3s ease !important;
-  transition: opacity 0.3s ease !important;
-  -webkit-transform-style: preserve-3d; }
+  transition: opacity 0.3s ease !important; }
 
 .parallax:first-child .slides li > .background-image-holder,
 .parallax:first-child .background-image-holder {
@@ -12295,7 +12292,7 @@ footer.bg-dark li,
     -webkit-transform: none !important; } }
 /*!---------- 6. BUTTONS ----------*/
 .btn {
-  /* font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   border: 2px solid #333347;
   padding: 0 26px;
   height: 40px;
@@ -12427,12 +12424,10 @@ body.btn-rounded .btn {
 
 /*!---------- 7. NAVIGATION ----------*/
 .nav-container {
-  -webkit-backface-visibility: hidden;
   max-width: 100%; }
 
 nav {
   background: #fff;
-  -webkit-backface-visibility: hidden;
   max-width: 100%; }
 
 nav ul {
@@ -12508,7 +12503,6 @@ nav.bg-dark .logo-dark {
   font-size: 11px;
   content: "\e64b";
   /* font-family: 'themify'; */
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -12517,7 +12511,7 @@ nav.bg-dark .logo-dark {
 .menu {
   width: 100%;
   height: 55px;
-  /* font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; */ }
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 .menu.inline-block {
   width: auto; }
@@ -12697,7 +12691,7 @@ nav.nav-centered .module.widget-handle {
   visibility: visible; }
 
 .module.widget-handle .title {
-  /* font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
   font-size: 11px;
@@ -13250,7 +13244,7 @@ input,
 button,
 select,
 textarea {
-  /* font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; */ }
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 input[type="text"],
 button,
@@ -13273,7 +13267,7 @@ input[type="password"] {
   outline: 1px red !important; }
 
 .input-with-label span {
-  /* font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   text-transform: uppercase;
   color: #292929;
@@ -13729,7 +13723,7 @@ button[type="submit"] .form-loading {
   background: #e4e4e4; }
 
 .accordion-1 .title span {
-  /* font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   line-height: 24px;
   font-weight: 400;
@@ -13777,7 +13771,6 @@ button[type="submit"] .form-loading {
 .accordion-2 .title:before {
   content: "\e622";
   /* font-family: 'themify'; */
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -13843,7 +13836,7 @@ button[type="submit"] .form-loading {
   background: #eee; }
 
 .button-tabs .tab-title span {
-  /* font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   line-height: 24px;
   font-weight: 400;
@@ -13928,7 +13921,7 @@ button[type="submit"] .form-loading {
   position: relative; }
 
 .text-tabs .tab-title span {
-  /* font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   line-height: 24px;
   font-weight: 400;
@@ -14005,7 +13998,7 @@ button[type="submit"] .form-loading {
   margin-bottom: 16px; }
 
 .icon-tabs .tab-title span {
-  /* font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   line-height: 24px;
   font-weight: 400;
@@ -14054,7 +14047,7 @@ button[type="submit"] .form-loading {
   border-radius: 0; }
 
 .progress-1 .progress-bar span {
-  /* font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   line-height: 24px;
   font-weight: 400;
@@ -14070,7 +14063,7 @@ button[type="submit"] .form-loading {
   margin-bottom: 8px; }
 
 .progress-2 span {
-  /* font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   line-height: 24px;
   font-weight: 400;
@@ -14112,7 +14105,7 @@ button[type="submit"] .form-loading {
 
 .breadcrumb-2 li a,
 .breadcrumb-2 li {
-  /* font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   line-height: 24px;
   font-weight: 400;
@@ -14157,7 +14150,7 @@ button[type="submit"] .form-loading {
   margin: 0; }
 
 .pagination li {
-  /* font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif; */ }
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 .pagination li a {
   width: 32px;
@@ -14240,8 +14233,7 @@ button[type="submit"] .form-loading {
     min-height: 160px; } }
 .feature-3 .left,
 .feature-3 .right {
-  display: inline-block;
-  float: left; }
+  display: inline-block; }
 
 .feature-3 .left {
   width: 15%; }
@@ -14346,7 +14338,7 @@ button[type="submit"] .form-loading {
   padding: 48px 32px; }
 
 .pricing-table .price {
-  /* font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 80px;
   line-height: 80px;
   font-weight: 300;
@@ -14456,7 +14448,6 @@ button[type="submit"] .form-loading {
 .link-list a:after {
   content: "\e628";
   /* font-family: 'themify'; */
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -14471,7 +14462,7 @@ button[type="submit"] .form-loading {
   margin-bottom: 0; }
 
 .widget .title {
-  /* font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   line-height: 24px;
   font-weight: 400;
@@ -14541,13 +14532,11 @@ button[type="submit"] .form-loading {
 .widget .twitter-feed .slides li:before {
   position: relative;
   top: 6px;
-  float: left;
   display: inline-block;
   margin-right: 8px;
   color: #292929;
   content: "\e74b";
   /* font-family: 'themify'; */
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -14804,7 +14793,6 @@ img {
 .tile-left,
 .tile-right {
   width: 50%;
-  float: left;
   display: inline-block;
   overflow: hidden;
   min-height: 300px;
@@ -14862,7 +14850,6 @@ img {
 .flex-direction-nav a.flex-prev:before {
   content: "\e649";
   /* font-family: 'themify'; */
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -15009,7 +14996,6 @@ img {
 .instafeed.grid-gallery li {
   width: 25%;
   display: inline-block;
-  float: left;
   padding: 8px;
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
@@ -15093,7 +15079,6 @@ img {
 .lb-nav a.lb-prev:before {
   content: "\e646";
   /* font-family: 'themify'; */
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -15342,7 +15327,8 @@ td {
 /*!---------- 27. VIDEO ----------*/
 video:-webkit-full-screen,
 audio:-webkit-full-screen {
-  -webkit-transform: translateY(0%); }
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%); }
 
 iframe {
   border: none; }
@@ -15689,8 +15675,7 @@ video {
 
 .comments-list .avatar,
 .comments-list .comment {
-  display: inline-block;
-  float: left; }
+  display: inline-block; }
 
 .comments-list .avatar {
   width: 10%; }
@@ -16020,10 +16005,9 @@ video {
   display: inline-block; }
 
 .filters li {
-  float: left;
   margin-right: 32px;
   cursor: pointer;
-  /* font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   border: 2px solid #333347;
   padding: 0 26px;
   height: 40px;
@@ -16157,7 +16141,6 @@ section + .portfolio-pullup {
 
 .testimonials .quote-author img {
   max-height: 60px;
-  float: left;
   display: inline-block;
   margin-right: 16px; }
 
@@ -16178,7 +16161,7 @@ section + .portfolio-pullup {
 .countdown {
   font-size: 80px;
   line-height: 88px;
-  /* font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 56px;
   line-height: 64px;
   font-weight: 100;
@@ -16247,7 +16230,7 @@ section + .portfolio-pullup {
   .twitter-feed.thirds li {
     width: 100%; } }
 .tweets-slider.large p {
-  /* font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 24px;
   line-height: 32px; }
 
@@ -18577,9 +18560,6 @@ body::after {
 .blog-posts .uppercase {
   padding-top: 15px; }
 
-.blog-posts .col-md-6:nth-child(3n-1) .bg-color-blog-posts {
-  background: #333347 !important; }
-
 .blog-posts .col-md-6:nth-child(3n-1) .uppercase {
   color: #d2d2d2; }
 
@@ -18592,10 +18572,10 @@ body::after {
 .blog-posts .uppercase {
   padding-top: 15px; }
 
-.blog-posts .row:nth-child(3n-1) .bg-color-blog-posts {
+.blog-posts article:nth-child(3n-1) .bg-color-blog-posts {
   background: #333347 !important; }
 
-.blog-posts .row:nth-child(3n-1) .uppercase {
+.blog-posts article:nth-child(3n-1) .uppercase {
   color: #d2d2d2; }
 
 .blog-posts .row p {
@@ -18791,7 +18771,22 @@ section.restaurant-schedule {
           flex-direction: row; }
 
 button.search-btn {
-  width: auto !important; }
+  width: auto !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.widget .search-container button.search-btn {
+  height: 40px;
+  line-height: 40px; }
+
+a:visited {
+  color: #000000; }
 
 /*** Comment Styling ***/
 .em_comment .comments {
@@ -18968,6 +18963,96 @@ p i {
 footer .menu > li {
   float: none; }
 
+nav ul {
+  list-style: none; }
+
+#daowa-main-menu > ul > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 15px; }
+
+.nav-bar .logo img {
+  height: 50px;
+  width: 150px; }
+
+.bg-menu-4 {
+  background-color: #be9ae2; }
+
+h1:not(.site-title):before, h2:before {
+  background: #767676;
+  content: "\020";
+  display: none;
+  height: 2px;
+  margin: 1rem 0;
+  width: 1em; }
+
+h1.daowa-site-title, .daowa-site-description {
+  margin-left: -15px;
+  margin-bottom: 5px; }
+
+.page-title .search-container {
+  margin-right: -15px; }
+
+.em-site-content section {
+  padding: 0; }
+
+.widget_archive ul li, .widget_categories ul li, .widget_meta ul li, .widget_nav_menu ul li, .widget_pages ul li, .widget_recent_comments ul li, .widget_recent_entries ul li, .widget_rss ul li {
+  color: #767676;
+  font-size: inherit;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem; }
+
+.widget {
+  text-align: left; }
+
+.widget .widget-title {
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-right: -6px;
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 15px; }
+
+.widget a {
+  color: #6a6a6a; }
+
+.widget a:hover {
+  color: #000000; }
+
+.widget_tag_cloud .tagcloud {
+  font-weight: 400;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+.widget_tag_cloud .tagcloud a {
+  display: inline-block;
+  background-color: #fff;
+  padding: 3px 16px;
+  color: #333;
+  margin: 10px 20px 10px 0;
+  border-radius: 5px; }
+
+.widget .search-container input.form-control {
+  border: 1px solid #ccc;
+  height: 40px;
+  background: #fefefe; }
+
+.em-site-content .daowa-site-main {
+  margin-right: 32px; }
+
+@media all and (max-width: 991px) {
+  .em-site-content .daowa-site-main {
+    margin-right: auto;
+    padding: 15px; } }
 @media all and (max-width: 767px) {
   .search-container input.form-control {
     height: 40px; }
@@ -18978,8 +19063,25 @@ footer .menu > li {
     width: 129px !important; }
 
   .search-container {
-    margin-top: 30px; } }
+    margin-top: 30px; }
+
+  h1.daowa-site-title, .daowa-site-description {
+    margin-left: 0;
+    margin-bottom: 5px;
+    text-align: center !important; }
+
+  .page-title .search-container {
+    width: 300px;
+    margin: 30px auto 0; } }
 @media all and (max-width: 425px) {
   .em-products button.add-to-cart-btn {
-    display: none; } }
+    display: none; }
+
+  .search-container .btn:last-child, .search-container .btn:last-of-type {
+    margin-right: 10px; } }
+@media (min-width: 768px) {
+  .form-inline .form-control {
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle; } }
 /*# sourceMappingURL=style.css.map */

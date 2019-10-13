@@ -18,36 +18,21 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11" />
 	<?php wp_head(); ?>
 </head>
-
-<body <?php body_class(); ?>>
+	
+<body <?php body_class( "scroll-assist custom-background" ); ?>>
 <?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'daowa' ); ?></a>
-
-		<header id="masthead" class="<?php echo is_singular() && daowa_can_show_post_thumbnail() ? 'site-header featured-image' : 'site-header'; ?>">
-
-			<div class="site-branding-container">
+	<header class="nav-container">
+		<a id="top"></a>
+		<nav class="absolute" aria-label="<?php esc_attr_e( 'Top Menu', 'daowa' ); ?>">
+			<div class="nav-bar">
+				
 				<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
-			</div><!-- .site-branding-container -->
+				<!-- .site-branding-container -->
+				
+				<?php get_template_part( 'template-parts/header/sitenav', 'main' ); ?>
+				<!-- .entry-header -->
 
-			<?php if ( is_singular() && daowa_can_show_post_thumbnail() ) : ?>
-				<div class="site-featured-image">
-					<?php
-						daowa_post_thumbnail();
-						the_post();
-						$discussion = ! is_page() && daowa_can_show_post_thumbnail() ? daowa_get_discussion_data() : null;
-
-						$classes = 'entry-header';
-					if ( ! empty( $discussion ) && absint( $discussion->responses ) > 0 ) {
-						$classes = 'entry-header has-discussion';
-					}
-					?>
-					<div class="<?php echo $classes; ?>">
-						<?php get_template_part( 'template-parts/header/entry', 'header' ); ?>
-					</div><!-- .entry-header -->
-					<?php rewind_posts(); ?>
-				</div>
-			<?php endif; ?>
-		</header><!-- #masthead -->
-
-	<div id="content" class="site-content">
+			</div>
+		</nav>
+	</header>
+	<div class="main-container nav-margin-space">
