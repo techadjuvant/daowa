@@ -967,9 +967,8 @@ nav.bg-dark .logo-dark {
   float: left;
   position: relative;
   transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
   opacity: 1;
+  padding-top: 15px;
 }
 .menu > li:last-child {
   margin-right: 0;
@@ -989,13 +988,10 @@ nav.bg-dark .logo-dark {
   z-index: 99;
   opacity: 0;
   transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
   transform: translate3d(0, 10px, 0);
-  -webkit-transform: translate3d(0, 10px, 0);
-  -moz-transform: translate3d(0, 10px, 0);
   visibility: hidden;
   margin-top: -1px;
+  top: 55px;
 }
 .menu > li > ul > li {
   position: relative;
