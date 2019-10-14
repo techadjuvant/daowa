@@ -260,7 +260,7 @@ button.single_add_to_cart_button.button.alt {
 
 a {
   font-weight: 600;
-  color: #333347;
+  color: #767676;
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -320,7 +320,7 @@ button.search-btn {
   line-height: 40px;
 }
 a:visited {
-  color: #000000;
+  color: #767676;
 }
 
 
@@ -422,16 +422,12 @@ font-size: 13px;
 }
 
 .em_comment b.fn {
-
-font-size: 13px;
-
-font-weight: 100;
-
-color: #696666;
-
-text-transform: uppercase;
-
-margin-left: 0px;
+  font-size: 13px;
+  font-weight: 100;
+  color: #696666;
+  text-transform: uppercase;
+  margin-left: 0px;
+  padding-top: 5px;
 }
 
 .em_comment .em_comment comment-content {
@@ -443,7 +439,7 @@ font-size: 13px;
 
 .em_comment .reply {
 
-margin-left: 50px;
+margin-left: 0px;
 }
 
 .em_comment .reply a {
@@ -551,7 +547,6 @@ border-bottom: 1px solid #eee;
 
 margin-top: 30px;
 
-border-top: 1px solid #eee;
 }
 
 .em_comment .comment-notes {
@@ -570,7 +565,7 @@ color: #bfbfbf;
 }
 
 .em_comment ul.children {
-  padding-left: 50px;
+  padding-left: 30px;
 }
 .em_comment .comment-content p {
   margin-bottom: 10px;
@@ -579,6 +574,10 @@ color: #bfbfbf;
 .em_comment input[type="password"], .em_comment input[type="email"], 
 .em_comment input[type="url"] {
   margin-bottom: 24px;
+}
+.em_comment i.ti.ti-comments {
+  padding-right: 5px;
+  font-size: 18px;
 }
 .wc-tabs {
   background: #ffffff;
@@ -596,6 +595,20 @@ color: #bfbfbf;
 }
 #review_form input[type="radio"], input[type="checkbox"] {
   margin-right: 5px;
+}
+.comment .comment-author .avatar {
+  float: inherit;
+  position: relative;
+  top: -9px;
+  right: auto;
+  margin-right: 5px;
+}
+.comment-author.vcard span.says {
+  padding-left: 5px;
+  padding-top: 2px;
+}
+.comment-author.vcard {
+  display: flex;
 }
 /*** Comment Styling Ends ***/
 
@@ -687,7 +700,23 @@ h1.daowa-site-title, .daowa-site-description {
 .em-site-content .daowa-site-main {
   margin-right: 32px;
 }
-
+.daowa-entry-title {
+  font-size: 36px;
+  margin: 20px 0 0;
+}
+.bypostauthor {
+  background-color: #fff;
+}
+.post-navigation .nav-links {
+  flex-direction: row;
+  margin: auto;
+  max-width: 100%;
+}
+nav.navigation.post-navigation {
+  margin-top: 50px;
+  padding-top: 25px;
+  border-top: 1px solid #eee;
+}
 
 @media all and (max-width: 991px) { 
   .em-site-content .daowa-site-main {
@@ -696,7 +725,6 @@ h1.daowa-site-title, .daowa-site-description {
   }
 
 }
-
 
 @media all and (max-width: 767px) {
   .search-container input.form-control {
@@ -751,6 +779,9 @@ h1.daowa-site-title, .daowa-site-description {
   }
   .pagination .nav-links svg.svg-icon {
     margin-top: -3px;
+  }
+  .comment {
+    padding-left: 0;
   }
 
   

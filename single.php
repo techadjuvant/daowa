@@ -12,49 +12,107 @@
 get_header();
 ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main">
+<main id="main-container" >
+	<?php
+		/* Start the Loop */
+		while ( have_posts() ) : the_post(); ?>
 
-			<?php
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<?php if ( has_post_thumbnail() ) : ?>
+					<section class="fullscreen image-bg overlay parallax">
+						<!-- Image overlay opacity control is loacted on line 637 of the theme-gunmetal.css file - CW -->
+						<div class="background-image-holder">
+							<?php the_post_thumbnail(); ?>
+						</div>
+					</section>
+					
+				<?php endif; ?>
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+				<div id="single-content">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-8 col-md-offset-2">
 
-				get_template_part( 'template-parts/content/content', 'single' );
+								<?php get_template_part( 'template-parts/content/content', 'single' );
 
-				if ( is_singular( 'attachment' ) ) {
-					// Parent post navigation.
-					the_post_navigation(
-						array(
-							/* translators: %s: parent post link */
-							'prev_text' => sprintf( __( '<span class="meta-nav">Published in</span><span class="post-title">%s</span>', 'daowa' ), '%title' ),
-						)
-					);
-				} elseif ( is_singular( 'post' ) ) {
-					// Previous/next post navigation.
-					the_post_navigation(
-						array(
-							'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next Post', 'daowa' ) . '</span> ' .
-								'<span class="screen-reader-text">' . __( 'Next post:', 'daowa' ) . '</span> <br/>' .
-								'<span class="post-title">%title</span>',
-							'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous Post', 'daowa' ) . '</span> ' .
-								'<span class="screen-reader-text">' . __( 'Previous post:', 'daowa' ) . '</span> <br/>' .
-								'<span class="post-title">%title</span>',
-						)
-					);
-				}
+								if ( is_singular( 'attachment' ) ) {
+									// Parent post navigation.
+									the_post_navigation(
+										array(
+											/* translators: %s: parent post link */
+											'prev_text' => sprintf( __( '<span class="meta-nav">Published in</span><span class="post-title">%s</span>', 'daowa' ), '%title' ),
+										)
+									);
+								} elseif ( is_singular( 'post' ) ) {
+									// Previous/next post navigation.
+									the_post_navigation(
+										array(
+											'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next Post', 'daowa' ) . '</span> ' .
+												'<span class="screen-reader-text">' . __( 'Next post:', 'daowa' ) . '</span> <br/>' .
+												'<span class="post-title">%title</span>',
+											'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous Post', 'daowa' ) . '</span> ' .
+												'<span class="screen-reader-text">' . __( 'Previous post:', 'daowa' ) . '</span> <br/>' .
+												'<span class="post-title">%title</span>',
+										)
+									);
+								}
+								?>
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				}
+								<!-- If comments are open or we have at least one comment, load up the comment template. -->
+								<?php if ( comments_open() || get_comments_number() ) { ?>
+									<div class="comm em_comment mb-80">
+										<?php comments_template(); ?>
+										<?php if ( is_singular() ) wp_enqueue_script( "comment-reply" ); ?>
+										<?php paginate_comments_links( ) ?>
+									</div>
+								<?php } ?>
 
-			endwhile; // End of the loop.
-			?>
+							</div>
+						</div>
+						<!--end of row-->
+					</div>
+					<!--end of container-->
+				</div><!-- .entry-content -->
+			</article><!-- #post-<?php the_ID(); ?> -->
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+		 <?php endwhile; ?> <!-- End of the loop. -->
+		<section class="related-news">
+            <div class="container">
+                <div class="row">
+                <?php
+                    $tags = wp_get_post_tags($post->ID);
+                    if ($tags) {
+                        echo '<h3 class="ml16">Related News</h3>';
+                        $first_tag = $tags[0]->term_id;
+                        $args=array(
+                            'tag__in' => array($first_tag),
+                            'post__not_in' => array($post->ID),
+                            'posts_per_page'=>4,
+                            'ignore_sticky_posts'=>1
+                        );
+                        $my_query = new WP_Query($args);
+                        if( $my_query->have_posts() ) {
+                            while ($my_query->have_posts()) : $my_query->the_post(); ?>
+                                <div class="col-sm-3">
+                                    <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
+                                        <?php the_post_thumbnail(); ?>
+                                        <h5 class="mt8 mb8">
+                                            <?php the_title(); ?>
+                                        </h5>                                        
+                                    </a>
+                                </div>
+                            <?php
+                            endwhile;
+                        }
+                        wp_reset_query();
+                    }
+                    ?>
+                </div>
+            </div>
+        </section>
+
+</main><!-- #main -->
+
 
 <?php
 get_footer();

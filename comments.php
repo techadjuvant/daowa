@@ -20,109 +20,50 @@
 if ( post_password_required() ) {
 	return;
 }
-
-$discussion = daowa_get_discussion_data();
 ?>
 
-<div id="comments" class="<?php echo comments_open() ? 'comments-area' : 'comments-area comments-closed'; ?>">
-	<div class="<?php echo $discussion->responses > 0 ? 'comments-title-wrap' : 'comments-title-wrap no-responses'; ?>">
-		<h2 class="comments-title">
-		<?php
-		if ( comments_open() ) {
-			if ( have_comments() ) {
-				_e( 'Join the Conversation', 'daowa' );
-			} else {
-				_e( 'Leave a comment', 'daowa' );
-			}
-		} else {
-			if ( '1' == $discussion->responses ) {
-				/* translators: %s: post title */
-				printf( _x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'daowa' ), get_the_title() );
-			} else {
-				printf(
-					/* translators: 1: number of comments, 2: post title */
-					_nx(
-						'%1$s reply on &ldquo;%2$s&rdquo;',
-						'%1$s replies on &ldquo;%2$s&rdquo;',
-						$discussion->responses,
-						'comments title',
-						'daowa'
-					),
-					number_format_i18n( $discussion->responses ),
-					get_the_title()
-				);
-			}
-		}
-		?>
-		</h2><!-- .comments-title -->
-		<?php
-			// Only show discussion meta information when comments are open and available.
-		if ( have_comments() && comments_open() ) {
-			get_template_part( 'template-parts/post/discussion', 'meta' );
-		}
-		?>
-	</div><!-- .comments-title-flex -->
-	<?php
-	if ( have_comments() ) :
+<h2><i class="ti ti-comments"></i>Comments</h2>
+<?php $args = array(
+	'walker'            => null,
+	'max_depth'         => '',
+	'style'             => 'ul',
+	'callback'          => null,
+	'end-callback'      => null,
+	'type'              => 'all',
+	'reply_text'        => 'Reply',
+	'page'              => '',
+	'per_page'          => '',
+	'avatar_size'       => 50,
+	'reverse_top_level' => null,
+	'reverse_children'  => '',
+	'format'            => 'html5', // or 'xhtml' if no 'HTML5' theme support
+	'short_ping'        => false,   // @since 3.6
+        'echo'              => true     // boolean, default is true
+); ?>
+<?php wp_list_comments($args, $comments); ?>
 
-		// Show comment form at top if showing newest comments at the top.
-		if ( comments_open() ) {
-			daowa_comment_form( 'desc' );
-		}
+<?php
+$form_args = array(
+        // change the title of send button 
+        'label_submit'=>'POST COMMENT',
+        // change the title of the reply section
+        'title_reply'=>'Write a Reply or Comment',
+        // remove "Text or HTML to be displayed after the set of comment fields"
+        'comment_notes_after' => '',
+        // redefine your own textarea (the comment body)
+ );?>
+         <?php if ( !is_user_logged_in() ) : ?>
 
-		?>
-		<ol class="comment-list">
-			<?php
-			wp_list_comments(
-				array(
-					'walker'      => new daowa_Walker_Comment(),
-					'avatar_size' => daowa_get_avatar_size(),
-					'short_ping'  => true,
-					'style'       => 'ol',
-				)
-			);
-			?>
-		</ol><!-- .comment-list -->
-		<?php
+            <?php comment_form( $comments_args ); ?>         
 
-		// Show comment navigation
-		if ( have_comments() ) :
-			$prev_icon     = daowa_get_icon_svg( 'chevron_left', 22 );
-			$next_icon     = daowa_get_icon_svg( 'chevron_right', 22 );
-			$comments_text = __( 'Comments', 'daowa' );
-			the_comments_navigation(
-				array(
-					'prev_text' => sprintf( '%s <span class="nav-prev-text"><span class="primary-text">%s</span> <span class="secondary-text">%s</span></span>', $prev_icon, __( 'Previous', 'daowa' ), __( 'Comments', 'daowa' ) ),
-					'next_text' => sprintf( '<span class="nav-next-text"><span class="primary-text">%s</span> <span class="secondary-text">%s</span></span> %s', __( 'Next', 'daowa' ), __( 'Comments', 'daowa' ), $next_icon ),
-				)
-			);
-		endif;
+        <?php else : ?>
 
-		// Show comment form at bottom if showing newest comments at the bottom.
-		if ( comments_open() && 'asc' === strtolower( get_option( 'comment_order', 'asc' ) ) ) :
-			?>
-			<div class="comment-form-flex">
-				<span class="screen-reader-text"><?php _e( 'Leave a comment', 'daowa' ); ?></span>
-				<?php daowa_comment_form( 'asc' ); ?>
-				<h2 class="comments-title" aria-hidden="true"><?php _e( 'Leave a comment', 'daowa' ); ?></h2>
-			</div>
-			<?php
-		endif;
+            <?php $comments_args[ 'comment_field' ] = '<textarea name="comment" id="comment" class="form-control comment-field"  aria-required="true" rows="10"></textarea>'; ?>
 
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() ) :
-			?>
-			<p class="no-comments">
-				<?php _e( 'Comments are closed.', 'daowa' ); ?>
-			</p>
-			<?php
-		endif;
+            <?php comment_form( $comments_args ); ?> 
 
-	else :
+        <?php endif ?>
 
-		// Show comment form.
-		daowa_comment_form( true );
+<?php
+//comment_form($form_args);
 
-	endif; // if have_comments();
-	?>
-</div><!-- #comments -->
