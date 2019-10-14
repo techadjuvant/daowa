@@ -12,48 +12,76 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_sticky() && is_home() && ! is_paged() ) {
-			printf( '<span class="sticky-post">%s</span>', _x( 'Featured', 'post', 'daowa' ) );
-		}
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
-		endif;
-		?>
-	</header><!-- .entry-header -->
+	<div  class="row text-left feature bordered bg-color-blog-posts">
+		<a id="post-<?php the_ID(); ?>" <?php post_class(); ?> href="<?php the_permalink(); ?>">
+			<?php if ( has_post_thumbnail() ) { ?>
+				<div class="col-md-4 col-xs-12">
+					<div class="blog-posts-image-holder">
+						<?php the_post_thumbnail(); ?>
+					</div>
+				</div>
+				<div class="col-md-8 col-xs-12">
+					<header>
+						<h3 class="uppercase mb40 mb-xs-24"><?php the_title(); ?></h3>
+					</header>
+					<div class="mb40">
+						<?php
+							the_content(
+								sprintf(
+									wp_kses(
+										/* translators: %s: Name of current post. Only visible to screen readers */
+										__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'daowa' ),
+										array(
+											'span' => array(
+												'class' => array(),
+											),
+										)
+									),
+									get_the_title()
+								)
+							);
 
-	<?php daowa_post_thumbnail(); ?>
+							wp_link_pages(
+								array(
+									'before' => '<div class="page-links">' . __( 'Pages:', 'daowa' ),
+									'after'  => '</div>',
+								)
+							);
+						?>
+					</div>
+				</div>
+			<?php } else { ?>
+				<div class="col-xs-12">
+					<header>
+						<h3 class="uppercase mb40 mb-xs-24"><?php the_title(); ?></h3>
+					</header>
+					<div class="mb40">
+					<?php
+						the_content(
+							sprintf(
+								wp_kses(
+									/* translators: %s: Name of current post. Only visible to screen readers */
+									__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'daowa' ),
+									array(
+										'span' => array(
+											'class' => array(),
+										),
+									)
+								),
+								get_the_title()
+							)
+						);
 
-	<div class="entry-content">
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'daowa' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			)
-		);
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'daowa' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php daowa_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+						wp_link_pages(
+							array(
+								'before' => '<div class="page-links">' . __( 'Pages:', 'daowa' ),
+								'after'  => '</div>',
+							)
+						);
+						?>
+					</div>
+				</div>
+			<?php } ?>
+		</a>
+	</div>
 </article><!-- #post-<?php the_ID(); ?> -->

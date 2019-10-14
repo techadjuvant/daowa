@@ -19070,5 +19070,19 @@ h1.daowa-site-title, .daowa-site-description {
   .form-inline .form-control {
     display: inline-block;
     width: 100%;
-    vertical-align: middle; } }
+    vertical-align: middle; }
+
+  .pagination .nav-links {
+    margin-left: auto;
+    padding: 0; }
+
+  .pagination .nav-links a.page-numbers {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    vertical-align: middle; }
+
+  .pagination .nav-links svg.svg-icon {
+    margin-top: -3px; } }
+
 /*# sourceMappingURL=style.css.map */

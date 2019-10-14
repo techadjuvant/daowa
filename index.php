@@ -23,20 +23,19 @@ get_header();
             <div class="row">
 				<?php $blog_info = get_bloginfo( 'name' ); ?>
 					<?php if ( ! empty( $blog_info ) ) : ?>
-						<div class="col-sm-7 text-left">
-							
-								<?php if ( is_front_page() && is_home() ) : ?>
-									<h1 class="daowa-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-								<?php else : ?>
-									<p class="daowa-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-								<?php endif; ?>
+						<div class="col-sm-7 text-left">							
+							<?php if ( is_front_page() && is_home() ) : ?>
+								<h1 class="daowa-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+							<?php else : ?>
+								<p class="daowa-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+							<?php endif; ?>
 
 							<?php $description = get_bloginfo( 'description', 'display' );
 								if ( $description || is_customize_preview() ) :
-									?>
-										<p class="daowa-site-description">
-											<?php echo $description; ?>
-										</p>
+								?>
+									<p class="daowa-site-description">
+										<?php echo $description; ?>
+									</p>
 							<?php endif; ?>
 						</div>
 						<div class="col-sm-5 col-xs-12 text-right">
@@ -63,7 +62,7 @@ get_header();
 									// Load posts loop.
 									while ( have_posts() ) {
 										the_post();
-										get_template_part( 'template-parts/content/content', 'excerpt' );
+										get_template_part( 'template-parts/content/content');
 									}
 									// Previous/next page navigation.
 									daowa_the_posts_navigation();

@@ -741,5 +741,17 @@ h1.daowa-site-title, .daowa-site-description {
     width: 100%;
     vertical-align: middle;
   }
+  .pagination .nav-links {
+    margin-left: auto;
+    padding: 0;
+  }
+  .pagination .nav-links a.page-numbers {
+    display: flex;
+    vertical-align: middle;
+  }
+  .pagination .nav-links svg.svg-icon {
+    margin-top: -3px;
+  }
+
   
 }
