@@ -18576,16 +18576,12 @@ body::after {
 .blog-posts article:nth-child(3n-1) .uppercase {
   color: #d2d2d2; }
 
-.blog-posts .row p {
-  color: #a2a2a2; }
+.blog-posts article:nth-child(3n-1) .row p {
+  color: #9d9d9d; }
 
-/* .menu-items .col-md-6:nth-child(3n-1) .bg-color-blog-posts {
-  background: #333347 !important;
-  color: #d2d2d2;
-}
-.menu-items .col-md-6:nth-child(3n-1) .uppercase {
-  color: #d2d2d2 !important;
-} */
+.blog-posts .row p {
+  color: #767676; }
+
 .blog-posts-image-holder img {
   width: 100% !important;
   height: 100% !important; }
@@ -18662,9 +18658,6 @@ p.product.woocommerce.add_to_cart_inline {
 .lightbox-grid.third-thumbs ul {
   margin-bottom: 0; }
 
-/* .em-wc-image-edit {
-  width: 400px;
-} */
 span.onsale {
   display: none; }
 
@@ -18715,9 +18708,8 @@ button.single_add_to_cart_button.button.alt {
 a {
   font-weight: 600;
   color: #767676;
-  transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   cursor: poitner; }
 
 a:hover {
@@ -19139,4 +19131,5 @@ h1.daowa-site-title a {
 
   .comment {
     padding-left: 0; } }
+
 /*# sourceMappingURL=style.css.map */

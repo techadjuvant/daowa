@@ -12,9 +12,9 @@
  */
 function daowa_custom_colors_css() {
 
-	$primary_color = 199;
+	$primary_color = 0;
 	if ( 'default' !== get_theme_mod( 'primary_color', 'default' ) ) {
-		$primary_color = absint( get_theme_mod( 'primary_color_hue', 199 ) );
+		$primary_color = absint( get_theme_mod( 'primary_color_hue', 0 ) );
 	}
 
 	/**
@@ -24,7 +24,7 @@ function daowa_custom_colors_css() {
 	 *
 	 * @param int $saturation Color saturation level.
 	 */
-	$saturation = apply_filters( 'daowa_custom_colors_saturation', 100 );
+	$saturation = apply_filters( 'daowa_custom_colors_saturation', 0 );
 	$saturation = absint( $saturation ) . '%';
 
 	/**
@@ -54,7 +54,7 @@ function daowa_custom_colors_css() {
 	 *
 	 * @param int $lightness_hover Hover color lightness level.
 	 */
-	$lightness_hover = apply_filters( 'daowa_custom_colors_lightness_hover', 23 );
+	$lightness_hover = apply_filters( 'daowa_custom_colors_lightness_hover', 60 );
 	$lightness_hover = absint( $lightness_hover ) . '%';
 
 	/**
