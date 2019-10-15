@@ -13,15 +13,13 @@
 
 ?>
 
-	</div><!-- #content -->
-
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
 			<?php $blog_info = get_bloginfo( 'name' ); ?>
 			<?php if ( ! empty( $blog_info ) ) : ?>
 				<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,
 			<?php endif; ?>
-			<a href="<?php echo esc_url( __( 'http://e-motahar.com', 'daowa' ) ); ?>" class="imprint">
+			<a target="_blank" href="<?php echo esc_url( __( 'http://e-motahar.com', 'daowa' ) ); ?>" class="imprint">
 				<?php
 				/* translators: %s: WordPress. */
 				printf( __( 'Proudly powered by %s.', 'daowa' ), 'Motahar' );
@@ -46,6 +44,7 @@
 				</nav><!-- .footer-navigation -->
 			<?php endif; ?>
 		</div><!-- .site-info -->
+		<a class="btn btn-sm fade-half back-to-top inner-link" href="#top">Top</a>
 	</footer><!-- #colophon -->
 
 </div><!-- #page -->

@@ -16452,9 +16452,8 @@ footer.bg-dark a {
   position: absolute;
   left: 50%;
   bottom: 0;
-  transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
-  color: #fff !important; }
+          transform: translateX(-50%); }
 
 .back-to-top:hover {
   opacity: 1; }
@@ -19140,5 +19139,4 @@ h1.daowa-site-title a {
 
   .comment {
     padding-left: 0; } }
-
 /*# sourceMappingURL=style.css.map */
