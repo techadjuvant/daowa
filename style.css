@@ -18882,10 +18882,6 @@ a:visited {
 .em_comment .comment-meta a {
   color: #696666; }
 
-.em_comment .comment-form input {
-  width: 48%;
-  float: left; }
-
 .em_comment input#url {
   width: 100%; }
 

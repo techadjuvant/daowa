@@ -54,13 +54,13 @@ $form_args = array(
  );?>
          <?php if ( !is_user_logged_in() ) : ?>
 
-            <?php comment_form( $comments_args ); ?>         
+            <?php comment_form( $form_args ); ?>         
 
         <?php else : ?>
 
-            <?php $comments_args[ 'comment_field' ] = '<textarea name="comment" id="comment" class="form-control comment-field"  aria-required="true" rows="10"></textarea>'; ?>
+            <?php $form_args[ 'comment_field' ] = '<textarea name="comment" id="comment" class="form-control comment-field"  aria-required="true" rows="10"></textarea>'; ?>
 
-            <?php comment_form( $comments_args ); ?> 
+            <?php comment_form( $form_args ); ?> 
 
         <?php endif ?>
 

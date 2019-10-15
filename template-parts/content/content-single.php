@@ -11,7 +11,6 @@
 
 ?>
 
-
 <header class="daowa-entry-header">
 	<?php get_template_part( 'template-parts/header/entry', 'header' ); ?>
 </header>
@@ -37,6 +36,4 @@
 			'after'  => '</div>',
 		)
 	);
-?>
-					
-				
+?>				
