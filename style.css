@@ -18957,7 +18957,9 @@ a:visited {
   position: relative;
   top: -9px;
   right: auto;
-  margin-right: 5px; }
+  margin-right: 5px;
+  width: 30px;
+  height: 30px; }
 
 .comment-author.vcard span.says {
   padding-left: 5px;
@@ -19074,7 +19076,22 @@ h1.daowa-site-title, .daowa-site-description {
 nav.navigation.post-navigation {
   margin-top: 50px;
   padding-top: 25px;
-  border-top: 1px solid #eee; }
+  border-top: 1px solid #eee;
+  clear: both; }
+
+nav .nav-links span.daowa-post-title {
+  font-size: 13px; }
+
+.post-navigation .nav-links a .meta-nav {
+  color: #3c3c3c;
+  font-weight: 600;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+h1.daowa-site-title a {
+  color: #333347; }
 
 @media all and (max-width: 991px) {
   .em-site-content .daowa-site-main {
@@ -19127,4 +19144,5 @@ nav.navigation.post-navigation {
 
   .comment {
     padding-left: 0; } }
+
 /*# sourceMappingURL=style.css.map */

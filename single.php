@@ -40,7 +40,7 @@ get_header();
 									the_post_navigation(
 										array(
 											/* translators: %s: parent post link */
-											'prev_text' => sprintf( __( '<span class="meta-nav">Published in</span><span class="post-title">%s</span>', 'daowa' ), '%title' ),
+											'prev_text' => sprintf( __( '<span class="meta-nav">Published in</span><span class="daowa-post-title">%s</span>', 'daowa' ), '%title' ),
 										)
 									);
 								} elseif ( is_singular( 'post' ) ) {
@@ -49,10 +49,10 @@ get_header();
 										array(
 											'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next Post', 'daowa' ) . '</span> ' .
 												'<span class="screen-reader-text">' . __( 'Next post:', 'daowa' ) . '</span> <br/>' .
-												'<span class="post-title">%title</span>',
+												'<span class="daowa-post-title">%title</span>',
 											'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous Post', 'daowa' ) . '</span> ' .
 												'<span class="screen-reader-text">' . __( 'Previous post:', 'daowa' ) . '</span> <br/>' .
-												'<span class="post-title">%title</span>',
+												'<span class="daowa-post-title">%title</span>',
 										)
 									);
 								}
@@ -82,7 +82,6 @@ get_header();
                 <?php
                     $tags = wp_get_post_tags($post->ID);
                     if ($tags) {
-                        echo '<h3 class="ml16">Related News</h3>';
                         $first_tag = $tags[0]->term_id;
                         $args=array(
                             'tag__in' => array($first_tag),
@@ -91,8 +90,9 @@ get_header();
                             'ignore_sticky_posts'=>1
                         );
                         $my_query = new WP_Query($args);
-                        if( $my_query->have_posts() ) {
-                            while ($my_query->have_posts()) : $my_query->the_post(); ?>
+                        if( $my_query->have_posts() ) { ?>
+							<h3 class="ml16">Related:</h3>
+							<?php	while ($my_query->have_posts()) : $my_query->the_post(); ?>	
                                 <div class="col-sm-3">
                                     <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
                                         <?php the_post_thumbnail(); ?>

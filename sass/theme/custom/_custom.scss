@@ -597,11 +597,13 @@ color: #bfbfbf;
   margin-right: 5px;
 }
 .comment .comment-author .avatar {
-  float: inherit;
-  position: relative;
-  top: -9px;
-  right: auto;
-  margin-right: 5px;
+    float: inherit;
+    position: relative;
+    top: -9px;
+    right: auto;
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
 }
 .comment-author.vcard span.says {
   padding-left: 5px;
@@ -716,6 +718,18 @@ nav.navigation.post-navigation {
   margin-top: 50px;
   padding-top: 25px;
   border-top: 1px solid #eee;
+  clear: both;
+}
+nav .nav-links span.daowa-post-title {
+  font-size: 13px;
+}
+.post-navigation .nav-links a .meta-nav {
+  color: #3c3c3c;
+  font-weight: 600;
+  user-select: none;
+}
+h1.daowa-site-title a {
+  color: #333347;
 }
 
 @media all and (max-width: 991px) { 
@@ -725,7 +739,6 @@ nav.navigation.post-navigation {
   }
 
 }
-
 @media all and (max-width: 767px) {
   .search-container input.form-control {
     height: 40px;
