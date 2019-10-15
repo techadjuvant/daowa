@@ -29,7 +29,7 @@ get_header();
         </div>
         <!--end of container-->
     </section>
-	<section id="menu" class="page-template">
+	<section id="main" class="page-template">
         <div class="container">
             <div class="blog-posts em-site-content">
                 <div class="row">

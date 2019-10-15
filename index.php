@@ -31,8 +31,7 @@ get_header();
 							<?php endif; ?>
 
 							<?php $description = get_bloginfo( 'description', 'display' );
-								if ( $description || is_customize_preview() ) :
-								?>
+								if ( $description || is_customize_preview() ) : ?>
 									<p class="daowa-site-description">
 										<?php echo $description; ?>
 									</p>
@@ -51,7 +50,7 @@ get_header();
         </div>
         <!--end of container-->
     </section>
-	<section id="menu" class="page-template">
+	<section id="main" class="page-template">
         <div class="container">
             <div class="blog-posts em-site-content">
                 <div class="row">
