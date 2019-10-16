@@ -207,8 +207,6 @@ add_action( 'widgets_init', 'daowa_widgets_init' );
  */
 function daowa_content_width() {
 	// This variable is intended to be overruled from themes.
-	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
-	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 	$GLOBALS['content_width'] = apply_filters( 'daowa_content_width', 640 );
 }
 add_action( 'after_setup_theme', 'daowa_content_width', 0 );
@@ -265,11 +263,11 @@ function daowa_editor_customizer_styles() {
 
 	wp_enqueue_style( 'daowa-editor-customizer-styles', get_theme_file_uri( '/style-editor-customizer.css' ), false, '1.1', 'all' );
 
-	if ( 'custom' === get_theme_mod( 'primary_color' ) ) {
+	// if ( 'custom' === get_theme_mod( 'primary_color' ) ) {
 		// Include color patterns.
 		require_once get_parent_theme_file_path( '/inc/color-patterns.php' );
 		wp_add_inline_style( 'daowa-editor-customizer-styles', daowa_custom_colors_css() );
-	}
+	// }
 }
 add_action( 'enqueue_block_editor_assets', 'daowa_editor_customizer_styles' );
 
@@ -278,20 +276,9 @@ add_action( 'enqueue_block_editor_assets', 'daowa_editor_customizer_styles' );
  */
 function daowa_colors_css_wrap() {
 
-	// Only include custom colors in customizer or frontend.
-	if ( ( ! is_customize_preview() && 'default' === get_theme_mod( 'primary_color', 'default' ) ) || is_admin() ) {
-		return;
-	}
+	require_once get_parent_theme_file_path( '/inc/color-patterns.php' ); ?>
 
-	require_once get_parent_theme_file_path( '/inc/color-patterns.php' );
-
-	$primary_color = 199;
-	if ( 'default' !== get_theme_mod( 'primary_color', 'default' ) ) {
-		$primary_color = get_theme_mod( 'primary_color_hue', 199 );
-	}
-	?>
-
-	<style type="text/css" id="custom-theme-colors" <?php echo is_customize_preview() ? 'data-hue="' . absint( $primary_color ) . '"' : ''; ?>>
+	<style type="text/css" id="custom-theme-colors" >
 		<?php echo daowa_custom_colors_css(); ?>
 	</style>
 	<?php
@@ -300,7 +287,7 @@ add_action( 'wp_head', 'daowa_colors_css_wrap' );
 
 
 
-// Add this to create Dropdown Menu	 
+// Dropdown Menu - Navigation Menu
 class CSS_Menu_Maker_Walker extends Walker {
 	var $db_fields = array( 'parent' => 'menu_item_parent', 'id' => 'db_id' );
 
@@ -391,3 +378,5 @@ require get_template_directory() . '/inc/template-tags.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+// require get_template_directory(). '/inc/customizer-api.php';

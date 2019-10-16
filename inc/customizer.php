@@ -34,72 +34,226 @@ function daowa_customize_register( $wp_customize ) {
 		);
 	}
 
+
 	/**
-	 * Primary color.
+	 * Background color.
 	 */
-	$wp_customize->add_setting(
-		'primary_color',
-		array(
-			'default'           => 'default',
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'daowa_sanitize_color_option',
-		)
+	// add the settings and controls for each color
+	// main color ( site title, h1, h2, h4. h6, widget headings, nav links, footer headings )
+	$txtcolors[] = array(
+		'slug'=>'bg_color_scheme_1', 
+		'default' => '#1e7e7e',
+		'label' => 'Body Background Color'
 	);
 
-	$wp_customize->add_control(
-		'primary_color',
-		array(
-			'type'     => 'radio',
-			'label'    => __( 'Primary Color', 'daowa' ),
-			'choices'  => array(
-				'default' => _x( 'Default', 'primary color', 'daowa' ),
-				'custom'  => _x( 'Custom', 'primary color', 'daowa' ),
-			),
-			'section'  => 'colors',
-			'priority' => 5,
-		)
+	// secondary color ( site description, sidebar headings, h3, h5, nav links on hover )
+	$txtcolors[] = array(
+		'slug'=>'homepage_header_bg_color', 
+		'default' => '#be9ae2',
+		'label' => 'Homepage Header Background Color'
 	);
 
-	// Add primary color hue setting and control.
-	$wp_customize->add_setting(
-		'primary_color_hue',
-		array(
-			'default'           => 199,
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'absint',
-		)
+	// secondary color ( site description, sidebar headings, h3, h5, nav links on hover )
+	$txtcolors[] = array(
+		'slug'=>'button_bg_color', 
+		'default' => '#292929',
+		'label' => 'Button Background Color'
 	);
 
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'primary_color_hue',
-			array(
-				'description' => __( 'Apply a custom color for buttons, links, featured images, etc.', 'daowa' ),
-				'section'     => 'colors',
-				'mode'        => 'hue',
+	// link color
+	$txtcolors[] = array(
+		'slug'=>'text_color', 
+		'default' => '#545454',
+		'label' => 'Text Color'
+	);
+
+	// link color
+	$txtcolors[] = array(
+		'slug'=>'link_color', 
+		'default' => '#545454',
+		'label' => 'Link Color'
+	);
+	
+	// link color ( hover, active )
+	$txtcolors[] = array(
+		'slug'=>'hover_link_color', 
+		'default' => '#a0a0a0',
+		'label' => 'Link Color (on hover)'
+	);
+
+	// secondary color ( site description, sidebar headings, h3, h5, nav links on hover )
+	$txtcolors[] = array(
+		'slug'=>'sidebar_background_color', 
+		'default' => '#f8f8f8',
+		'label' => 'Sidebar & Posts Background Color'
+	);
+
+	// secondary color ( site description, sidebar headings, h3, h5, nav links on hover )
+	$txtcolors[] = array(
+		'slug'=> 'veriant_posts_background_color', 
+		'default' => '#333347',
+		'label' => 'Veriant Posts Background Color'
+	);
+	
+	// secondary color ( site description, sidebar headings, h3, h5, nav links on hover )
+	$txtcolors[] = array(
+		'slug'=> 'veriant_posts_text_color', 
+		'default' => '#d2d2d2',
+		'label' => 'Veriant Posts Text Color'
+	);
+
+	foreach( $txtcolors as $txtcolor ) {
+	
+		// SETTINGS
+		$wp_customize->add_setting(
+			$txtcolor['slug'], array(
+				'default' => $txtcolor['default'],
+				'type' => 'theme_mod', 
+				//'capability' => 'edit_theme_options'
 			)
-		)
-	);
+		);
+		// CONTROLS
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				$txtcolor['slug'], 
+				array('label' => $txtcolor['label'], 
+				'section' => 'colors',
+				'settings' => $txtcolor['slug'])
+			)
+		);
+	}
 
-	// Add image filter setting and control.
-	$wp_customize->add_setting(
-		'image_filter',
-		array(
-			'default'           => 1,
-			'sanitize_callback' => 'absint',
-			'transport'         => 'postMessage',
-		)
-	);
 
-	$wp_customize->add_control(
-		'image_filter',
-		array(
-			'label'   => __( 'Apply a filter to featured images using the primary color', 'daowa' ),
-			'section' => 'colors',
-			'type'    => 'checkbox',
-		)
-	);
+	// Typography Section setup
+	$wp_customize->add_section('typography', array(
+		'title'			=> __('Typography', 'daowa'),
+		'description'	=> sprintf(__('Setup your theme typography', 'daowa') ),
+		'priority' 		=> 41
+	) );
+
+	// Heading setting setup
+	$wp_customize->add_setting('font_family_source', array(
+		'default'			=> __("https://fonts.googleapis.com/css?family=Varela+Round&display=swap", 'daowa'),
+		'type' 				=> 'theme_mod'
+	) );
+
+	// heading Control setup
+	$wp_customize->add_control('font_family_source', array(
+		'label'			=> __('Import Google Font. Exm: https://example.com ', 'daowa'),
+		'section' 		=> 'typography',
+		'priority' 		=>  20
+	) );
+
+	// Heading setting setup
+	$wp_customize->add_setting('font_family', array(
+		'default'			=> __(" 'Varela Round', sans-serif; ", 'daowa'),
+		'type' 				=> 'theme_mod'
+	) );
+
+	// heading Control setup
+	$wp_customize->add_control('font_family', array(
+		'label'			=> __('Add Font Family', 'daowa'),
+		'section' 		=> 'typography',
+		'priority' 		=>  20
+	) );
+	
+	// Heading setting setup
+	$wp_customize->add_setting('heading_1_font_size', array(
+		'default'			=> __('28', 'daowa'),
+		'type' 				=> 'theme_mod'
+	) );
+	
+	// heading Control setup
+	$wp_customize->add_control('heading_1_font_size', array(
+		'label'			=> __('H1 Heading Font Size', 'daowa'),
+		'section' 		=> 'typography',
+		'priority' 		=>  20
+	) );
+	// Heading setting setup
+	$wp_customize->add_setting('heading_1_font_weight', array(
+		'default'			=> __('300', 'daowa'),
+		'type' 				=> 'theme_mod'
+	) );
+	
+	// heading Control setup
+	$wp_customize->add_control('heading_1_font_weight', array(
+		'type'     => 'select',
+		'label'    => __( 'H1 Heading Font Weight', 'daowa' ),
+		'choices'  => array(
+			'100' => _x( '100', '100', 'daowa' ),
+			'200'  => _x( '200', '200', 'daowa' ),
+			'300'  => _x( '300', '300', 'daowa' ),
+			'400' => _x( '400', '400', 'daowa' ),
+			'500'  => _x( '500', '500', 'daowa' ),
+			'600'  => _x( '600', '600', 'daowa' ),
+			'700'  => _x( '700', '700', 'daowa' ),
+		),
+		'section'  => 'typography',
+		'priority' 		=>  20
+	) );
+	// Heading setting setup
+	$wp_customize->add_setting('heading_1_line_height', array(
+		'default'			=> __( 36, 'daowa'),
+		'type' 				=> 'theme_mod'
+	) );
+	
+	// heading Control setup
+	$wp_customize->add_control('heading_1_line_height', array(
+		'type'     => 'number',
+		'label'    => __( 'H1 Heading Line Height', 'daowa' ),
+		'section'  => 'typography',
+		'priority' 		=>  20
+	) );
+
+	// Heading setting setup
+	$wp_customize->add_setting('heading_1_letter_spacing', array(
+		'default'			=> __('1', 'daowa'),
+		'type' 				=> 'theme_mod'
+	) );
+	
+	// heading Control setup
+	$wp_customize->add_control('heading_1_letter_spacing', array(
+		'label'			=> __('H3 Heading Letter Spacing', 'daowa'),
+		'section' 		=> 'typography',
+		'priority' 		=>  20
+	) );
+	// Heading setting setup
+	$wp_customize->add_setting('heading_1_text_case', array(
+		'default'			=> __('uppercase', 'daowa'),
+		'type' 				=> 'theme_mod'
+	) );
+	
+	// heading Control setup
+	$wp_customize->add_control('heading_1_text_case', array(
+		'type'     => 'select',
+		'label'    => __( 'H1 Heading Text Case', 'daowa' ),
+		'choices'  => array(
+			'uppercase' => _x( 'Uppercase', 'uppercase', 'daowa' ),
+			'lowercase'  => _x( 'Lowercase', 'lowercase', 'daowa' ),
+			'capitalize'  => _x( 'Capitalize', 'capitalize', 'daowa' ),
+		),
+		'section'  => 'typography',
+		'priority' 		=>  20
+	) );
+	
+
+
+
+
+
+	// Text setting setup
+	$wp_customize->add_setting('paragraph_font_size', array(
+		'default'			=> __('14', 'daowa'),
+		'type' 				=> 'theme_mod'
+	) );
+	
+	// Text Control setup
+	$wp_customize->add_control('paragraph_font_size', array(
+		'label'			=> __('Paragraph Font Size', 'daowa'),
+		'section' 		=> 'typography',
+		'priority' 		=>  20
+	) );
 }
 add_action( 'customize_register', 'daowa_customize_register' );
 

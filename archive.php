@@ -17,7 +17,7 @@ get_header();
         <div class="container">
             <div class="row">
 				<div class="col-sm-7 text-left">	
-					<h2 class="uppercase mb0">
+					<h2 class=" mb0">
 						<strong><?php the_archive_title();?></strong>
 					</h2>					
 				</div>

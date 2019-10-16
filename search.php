@@ -17,7 +17,7 @@ get_header();
         <div class="container">
             <div class="row">
 				<div class="col-sm-7 text-left">	
-					<h2 class="uppercase mb0">
+					<h2 class=" mb0">
 						Search <strong><?php echo get_search_query(); ?></strong>
 					</h2>					
 				</div>

@@ -91,7 +91,7 @@ get_header();
                         );
                         $my_query = new WP_Query($args);
                         if( $my_query->have_posts() ) { ?>
-							<h3 class="ml16">Related:</h3>
+							<h4 class="ml16">YOU MAY ALSO LIKE:</h4>
 							<?php	while ($my_query->have_posts()) : $my_query->the_post(); ?>	
                                 <div class="col-sm-3">
                                     <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
