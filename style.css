@@ -14194,9 +14194,8 @@ button[type="submit"] .form-loading {
   margin-bottom: 0; }
 
 @media all and (max-width: 767px) {
-  .feature.boxed,
-  .feature.bordered {
-    padding: 24px; } }
+  .feature.boxed, .feature.bordered {
+    padding: 15px 5px; } }
 @media all and (max-width: 990px) {
   .feature .icon-lg {
     font-size: 40px; } }
@@ -19099,7 +19098,7 @@ header.daowa-entry-header {
     text-align: center !important; }
 
   .page-title .search-container {
-    width: 300px;
+    width: 280px;
     margin: 30px auto 0; } }
 @media all and (max-width: 425px) {
   .em-products button.add-to-cart-btn {

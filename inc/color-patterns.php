@@ -139,7 +139,18 @@ function daowa_custom_colors_css() {
 		a:hover, a:active, .widget a:hover, .post-navigation .nav-links a:hover, .entry .entry-meta a:hover, .entry .entry-footer a:hover {
 			color: " . get_theme_mod("hover_link_color", "") . ";
 		}
-		
+
+		@media all and (max-width: 426px) {
+			h1 {
+				font-size: 20px;
+				font-weight: 300;
+				letter-spacing: -1px;
+				text-transform: uppercase;
+				line-height: 28px;
+				word-spacing: 1px;
+			}
+
+		}
 		
 		";
 

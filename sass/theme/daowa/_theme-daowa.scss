@@ -2653,9 +2653,8 @@ button[type="submit"] .form-loading {
   margin-bottom: 0;
 }
 @media all and (max-width: 767px) {
-  .feature.boxed,
-  .feature.bordered {
-    padding: 24px;
+  .feature.boxed, .feature.bordered {
+    padding: 15px 5px;
   }
 }
 @media all and (max-width: 990px) {
