@@ -3,7 +3,7 @@
  * Displays header site branding
  *
  * @package WordPress
- * @subpackage Daowa
+ * @subpackage khaown
  * @since 1.0.0
  */
 ?>

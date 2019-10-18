@@ -3,7 +3,7 @@
  * The template for displaying image attachments
  *
  * @package WordPress
- * @subpackage Daowa
+ * @subpackage khaown
  * @since 1.0.0
  */
 
@@ -30,13 +30,13 @@ get_header();
 						<figure class="entry-attachment wp-block-image">
 						<?php
 							/**
-							 * Filter the default daowa image attachment size.
+							 * Filter the default khaown image attachment size.
 							 *
 							 * @since Twenty Sixteen 1.0
 							 *
 							 * @param string $image_size Image size. Default 'large'.
 							 */
-							$image_size = apply_filters( 'daowa_attachment_size', 'full' );
+							$image_size = apply_filters( 'khaown_attachment_size', 'full' );
 
 							echo wp_get_attachment_image( get_the_ID(), $image_size );
 						?>
@@ -49,11 +49,11 @@ get_header();
 						the_content();
 						wp_link_pages(
 							array(
-								'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'daowa' ) . '</span>',
+								'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'khaown' ) . '</span>',
 								'after'       => '</div>',
 								'link_before' => '<span>',
 								'link_after'  => '</span>',
-								'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'daowa' ) . ' </span>%',
+								'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'khaown' ) . ' </span>%',
 								'separator'   => '<span class="screen-reader-text">, </span>',
 							)
 						);
@@ -67,7 +67,7 @@ get_header();
 					if ( $metadata ) {
 						printf(
 							'<span class="full-size-link"><span class="screen-reader-text">%1$s</span><a href="%2$s">%3$s &times; %4$s</a></span>',
-							_x( 'Full size', 'Used before full size attachment link.', 'daowa' ),
+							_x( 'Full size', 'Used before full size attachment link.', 'khaown' ),
 							esc_url( wp_get_attachment_url() ),
 							absint( $metadata['width'] ),
 							absint( $metadata['height'] )
@@ -75,7 +75,7 @@ get_header();
 					}
 					?>
 
-						<?php daowa_entry_footer(); ?>
+						<?php khaown_entry_footer(); ?>
 
 					</footer><!-- .entry-footer -->
 				</article><!-- #post-<?php the_ID(); ?> -->
@@ -84,7 +84,7 @@ get_header();
 				// Parent post navigation.
 				the_post_navigation(
 					array(
-						'prev_text' => _x( '<span class="meta-nav">Published in</span><br><span class="post-title">%title</span>', 'Parent post link', 'daowa' ),
+						'prev_text' => _x( '<span class="meta-nav">Published in</span><br><span class="post-title">%title</span>', 'Parent post link', 'khaown' ),
 					)
 				);
 

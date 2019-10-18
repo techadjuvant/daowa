@@ -3,25 +3,25 @@
  * Displays the post header
  *
  * @package WordPress
- * @subpackage Daowa
+ * @subpackage khaown
  * @since 1.0.0
  */
 
-$discussion = ! is_page() && daowa_can_show_post_thumbnail() ? daowa_get_discussion_data() : null; ?>
+$discussion = ! is_page() && khaown_can_show_post_thumbnail() ? khaown_get_discussion_data() : null; ?>
 
-<?php the_title( '<h1 class="daowa-entry-title">', '</h1>' ); ?>
+<?php the_title( '<h1 class="khaown-entry-title">', '</h1>' ); ?>
 
 <?php if ( ! is_page() ) : ?>
 <div class="entry-meta">
-	<?php daowa_posted_by(); ?>
-	<?php daowa_posted_on(); ?>
+	<?php khaown_posted_by(); ?>
+	<?php khaown_posted_on(); ?>
 	<span class="comment-count">
 		<?php
 		if ( ! empty( $discussion ) ) {
-			daowa_discussion_avatars_list( $discussion->authors );
+			khaown_discussion_avatars_list( $discussion->authors );
 		}
 		?>
-		<?php daowa_comment_count(); ?>
+		<?php khaown_comment_count(); ?>
 	</span>
 	<?php
 	// Edit post link.
@@ -29,7 +29,7 @@ $discussion = ! is_page() && daowa_can_show_post_thumbnail() ? daowa_get_discuss
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers. */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'daowa' ),
+					__( 'Edit <span class="screen-reader-text">%s</span>', 'khaown' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -38,7 +38,7 @@ $discussion = ! is_page() && daowa_can_show_post_thumbnail() ? daowa_get_discuss
 				),
 				get_the_title()
 			),
-			'<span class="edit-link">' . daowa_get_icon_svg( 'edit', 16 ),
+			'<span class="edit-link">' . khaown_get_icon_svg( 'edit', 16 ),
 			'</span>'
 		);
 	?>

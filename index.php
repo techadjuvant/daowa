@@ -10,7 +10,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
- * @subpackage Daowa
+ * @subpackage khaown
  * @since 1.0.0
  */
 
@@ -29,14 +29,14 @@ get_header();
 					<?php if ( ! empty( $blog_info ) ) : ?>
 						<div class="col-sm-7 text-left">							
 							<?php if ( is_front_page() && is_home() ) : ?>
-								<h1 class="daowa-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+								<h1 class="khaown-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 							<?php else : ?>
-								<p class="daowa-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+								<p class="khaown-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 							<?php endif; ?>
 
 							<?php $description = get_bloginfo( 'description', 'display' );
 								if ( $description || is_customize_preview() ) : ?>
-									<p class="daowa-site-description">
+									<p class="khaown-site-description">
 										<?php echo $description; ?>
 									</p>
 							<?php endif; ?>
@@ -60,7 +60,7 @@ get_header();
             <div class="blog-posts em-site-content">
                 <div class="row">
                     <div class="col-md-9 col-xs-12">
-						<main id="daowa-main" class="daowa-site-main">
+						<main id="khaown-main" class="khaown-site-main">
 							<?php
 								if ( have_posts() ) {
 									// Load posts loop.
@@ -69,7 +69,7 @@ get_header();
 										get_template_part( 'template-parts/content/content', 'excerpt');
 									}
 									// Previous/next page navigation.
-									daowa_the_posts_navigation();
+									khaown_the_posts_navigation();
 								} else {
 									// If no content, include the "No posts found" template.
 									get_template_part( 'template-parts/content/content', 'none' );

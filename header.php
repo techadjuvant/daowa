@@ -7,7 +7,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package WordPress
- * @subpackage Daowa
+ * @subpackage khaown
  * @since 1.0.0
  */
 ?><!doctype html>
@@ -33,7 +33,7 @@
 <?php wp_body_open(); ?>
 	<header class="nav-container">
 		<a id="top"></a>
-		<nav class="absolute" aria-label="<?php esc_attr_e( 'Top Menu', 'daowa' ); ?>">
+		<nav class="absolute" aria-label="<?php esc_attr_e( 'Top Menu', 'khaown' ); ?>">
 			<div class="nav-bar">
 				
 				<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>

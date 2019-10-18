@@ -624,7 +624,7 @@ h1:not(.site-title):before, h2:before {
   margin: 1rem 0;
   width: 1em;
 }
-h1.daowa-site-title, .daowa-site-description {
+h1.khaown-site-title, .khaown-site-description {
   margin-left: -15px;
   margin-bottom: 5px;
 }
@@ -677,10 +677,10 @@ h1.daowa-site-title, .daowa-site-description {
   height: 40px;
   background: #fefefe;
 }
-.em-site-content .daowa-site-main {
+.em-site-content .khaown-site-main {
   margin-right: 32px;
 }
-.daowa-entry-title {
+.khaown-entry-title {
   margin: 20px 0 0;
 }
 .bypostauthor {
@@ -697,7 +697,7 @@ nav.navigation.post-navigation {
   border-top: 1px solid #eee;
   clear: both;
 }
-nav .nav-links span.daowa-post-title {
+nav .nav-links span.khaown-post-title {
   font-size: 13px;
 }
 .post-navigation .nav-links a .meta-nav {
@@ -705,12 +705,12 @@ nav .nav-links span.daowa-post-title {
   font-weight: 600;
   user-select: none;
 }
-header.daowa-entry-header {
+header.khaown-entry-header {
   margin-bottom: 30px;
 }
 
 @media all and (max-width: 991px) { 
-  .em-site-content .daowa-site-main {
+  .em-site-content .khaown-site-main {
     margin-right: auto;
     padding: 15px;
   }
@@ -728,7 +728,7 @@ header.daowa-entry-header {
   .search-container {
     margin-top: 30px;
   }
-  h1.daowa-site-title, .daowa-site-description {
+  h1.khaown-site-title, .khaown-site-description {
     margin-left: 0;
     margin-bottom: 5px;
     text-align: center !important;

@@ -1,11 +1,11 @@
 {
-  "name": "daowa",
+  "name": "khaown",
   "version": "1.0.0",
   "description": "Default WP Theme",
   "bugs": {
-    "url": "https://github.com/WordPress/daowa/issues"
+    "url": "https://github.com/WordPress/khaown/issues"
   },
-  "homepage": "https://github.com/WordPress/daowa#readme",
+  "homepage": "https://github.com/WordPress/khaown#readme",
   "devDependencies": {
     "@wordpress/browserslist-config": "^2.2.2",
     "autoprefixer": "^9.1.5",

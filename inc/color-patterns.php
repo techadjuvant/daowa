@@ -1,16 +1,16 @@
 <?php
 /**
- * Daowa: Color Patterns
+ * khaown: Color Patterns
  *
  * @package WordPress
- * @subpackage daowa
+ * @subpackage khaown
  * @since 1.0
  */
 
 /**
  * Generate the CSS for the current primary color.
  */
-function daowa_custom_colors_css() {
+function khaown_custom_colors_css() {
 
 	$primary_color = 0;
 	if ( "default" !== get_theme_mod( "primary_color", "default" ) ) {
@@ -18,53 +18,53 @@ function daowa_custom_colors_css() {
 	}
 
 	/**
-	 * Filter Daowa default saturation level.
+	 * Filter khaown default saturation level.
 	 *
-	 * @since Daowa 1.0
+	 * @since khaown 1.0
 	 *
 	 * @param int $saturation Color saturation level.
 	 */
-	$saturation = apply_filters( "daowa_custom_colors_saturation", 100 );
+	$saturation = apply_filters( "khaown_custom_colors_saturation", 100 );
 	$saturation = absint( $saturation ) . "%";
 
 	/**
-	 * Filter Daowa default selection saturation level.
+	 * Filter khaown default selection saturation level.
 	 *
-	 * @since Daowa 1.0
+	 * @since khaown 1.0
 	 *
 	 * @param int $saturation_selection Selection color saturation level.
 	 */
-	$saturation_selection = absint( apply_filters( "daowa_custom_colors_saturation_selection", 50 ) );
+	$saturation_selection = absint( apply_filters( "khaown_custom_colors_saturation_selection", 50 ) );
 	$saturation_selection = $saturation_selection . "%";
 
 	/**
-	 * Filter Daowa default lightness level.
+	 * Filter khaown default lightness level.
 	 *
-	 * @since Daowa 1.0
+	 * @since khaown 1.0
 	 *
 	 * @param int $lightness Color lightness level.
 	 */
-	$lightness = apply_filters( "daowa_custom_colors_lightness", 33 );
+	$lightness = apply_filters( "khaown_custom_colors_lightness", 33 );
 	$lightness = absint( $lightness ) . "%";
 
 	/**
-	 * Filter Daowa default hover lightness level.
+	 * Filter khaown default hover lightness level.
 	 *
-	 * @since Daowa 1.0
+	 * @since khaown 1.0
 	 *
 	 * @param int $lightness_hover Hover color lightness level.
 	 */
-	$lightness_hover = apply_filters( "daowa_custom_colors_lightness_hover", 60 );
+	$lightness_hover = apply_filters( "khaown_custom_colors_lightness_hover", 60 );
 	$lightness_hover = absint( $lightness_hover ) . "%";
 
 	/**
-	 * Filter Daowa default selection lightness level.
+	 * Filter khaown default selection lightness level.
 	 *
-	 * @since Daowa 1.0
+	 * @since khaown 1.0
 	 *
 	 * @param int $lightness_selection Selection color lightness level.
 	 */
-	$lightness_selection = apply_filters( "daowa_custom_colors_lightness_selection", 90 );
+	$lightness_selection = apply_filters( "khaown_custom_colors_lightness_selection", 90 );
 	$lightness_selection = absint( $lightness_selection ) . "%";
 
 	$font_Choice = get_theme_mod("default_or_customfont", "");
@@ -151,19 +151,19 @@ function daowa_custom_colors_css() {
 		.bg-menu-4 {
 			background-color: " . get_theme_mod("homepage_header_bg_color", "") . ";
 		}
-		.page-title h1.daowa-site-title a {
+		.page-title h1.khaown-site-title a {
 			color: " . get_theme_mod("top_header_site_tile_color", "") . ";
 			font-size: " . get_theme_mod("site_title_font_size", "") . "px;
 			font-weight: " . get_theme_mod("site_title_font_weight", "") . ";
 			margin-bottom: " . get_theme_mod("site_title_margin_bottom", "") . "px;
 		  }
-		.page-title h1.daowa-site-title {
+		.page-title h1.khaown-site-title {
 			font-size: " . get_theme_mod("site_title_font_size", "") . "px;
 			font-weight: " . get_theme_mod("site_title_font_weight", "") . ";
 			margin-bottom: " . get_theme_mod("site_title_margin_bottom", "") . "px;
 			color: " . get_theme_mod("top_header_site_tile_color", "") . ";
 		}
-		p.daowa-site-description {
+		p.khaown-site-description {
 			color: " . get_theme_mod("top_header_site_desc_color", "") . ";
 			font-size: " . get_theme_mod("site_desc_font_size", "") . "px;
 		}
@@ -266,13 +266,13 @@ function daowa_custom_colors_css() {
 	}
 
 	/**
-	 * Filters Daowa custom colors CSS.
+	 * Filters khaown custom colors CSS.
 	 *
-	 * @since Daowa 1.0
+	 * @since khaown 1.0
 	 *
 	 * @param string $css           Base theme colors CSS.
 	 * @param int    $primary_color The user"s selected color hue.
 	 * @param string $saturation    Filtered theme color saturation level.
 	 */
-	return apply_filters( "daowa_custom_colors_css", $theme_css, $primary_color, $saturation );
+	return apply_filters( "khaown_custom_colors_css", $theme_css, $primary_color, $saturation );
 }

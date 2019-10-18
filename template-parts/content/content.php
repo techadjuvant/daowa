@@ -5,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
- * @subpackage Daowa
+ * @subpackage khaown
  * @since 1.0.0
  */
 
@@ -30,7 +30,7 @@
 								sprintf(
 									wp_kses(
 										/* translators: %s: Name of current post. Only visible to screen readers */
-										__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'daowa' ),
+										__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'khaown' ),
 										array(
 											'span' => array(
 												'class' => array(),
@@ -43,7 +43,7 @@
 
 							wp_link_pages(
 								array(
-									'before' => '<div class="page-links">' . __( 'Pages:', 'daowa' ),
+									'before' => '<div class="page-links">' . __( 'Pages:', 'khaown' ),
 									'after'  => '</div>',
 								)
 							);
@@ -61,7 +61,7 @@
 							sprintf(
 								wp_kses(
 									/* translators: %s: Name of current post. Only visible to screen readers */
-									__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'daowa' ),
+									__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'khaown' ),
 									array(
 										'span' => array(
 											'class' => array(),
@@ -74,7 +74,7 @@
 
 						wp_link_pages(
 							array(
-								'before' => '<div class="page-links">' . __( 'Pages:', 'daowa' ),
+								'before' => '<div class="page-links">' . __( 'Pages:', 'khaown' ),
 								'after'  => '</div>',
 							)
 						);

@@ -1,9 +1,9 @@
 <?php
 /**
- * Daowa: Customizer
+ * khaown: Customizer
  *
  * @package WordPress
- * @subpackage Daowa
+ * @subpackage khaown
  * @since 1.0.0
  */
 
@@ -12,7 +12,7 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function daowa_customize_register( $wp_customize ) {
+function khaown_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -22,14 +22,14 @@ function daowa_customize_register( $wp_customize ) {
 			'blogname',
 			array(
 				'selector'        => '.site-title a',
-				'render_callback' => 'daowa_customize_partial_blogname',
+				'render_callback' => 'khaown_customize_partial_blogname',
 			)
 		);
 		$wp_customize->selective_refresh->add_partial(
 			'blogdescription',
 			array(
 				'selector'        => '.site-description',
-				'render_callback' => 'daowa_customize_partial_blogdescription',
+				'render_callback' => 'khaown_customize_partial_blogdescription',
 			)
 		);
 	}
@@ -101,6 +101,7 @@ function daowa_customize_register( $wp_customize ) {
 			$txtcolor['slug'], array(
 				'default' => $txtcolor['default'],
 				'type' => 'theme_mod',
+				'sanitize_callback'  => 'esc_attr'
 			)
 		);
 		// CONTROLS
@@ -118,24 +119,25 @@ function daowa_customize_register( $wp_customize ) {
 
 	// Typography Section setup
 	$wp_customize->add_section('typography', array(
-		'title'			=> __('Typography', 'daowa'),
-		'description'	=> sprintf(__('Setup your theme typography', 'daowa') ),
+		'title'			=> __('Typography', 'khaown'),
+		'description'	=> sprintf(__('Setup your theme typography', 'khaown') ),
 		'priority' 		=> 41
 	) );
 
 	// default_or_customfont setting setup
 	$wp_customize->add_setting('default_or_customfont', array(
-		'default'			=> __('default_font', 'daowa'),
+		'default'			=> __('default_font', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
 	
 	// default_or_customfont Control setup
 	$wp_customize->add_control('default_or_customfont', array(
-		'label'			=> __('Choose Font Family', 'daowa'),
+		'label'			=> __('Choose Font Family', 'khaown'),
 		'type'			=> 'radio',
 		'choices'   => array(
-			'default_font' => __( 'Default Font', 'daowa' ),
-			'custom_font' => __( 'Custom Font', 'daowa' )
+			'default_font' => __( 'Default Font', 'khaown' ),
+			'custom_font' => __( 'Custom Font', 'khaown' )
 		),
 		'section' 		=> 'typography',
 		'priority' 		=>  20
@@ -143,13 +145,12 @@ function daowa_customize_register( $wp_customize ) {
 
 	// font_family setting setup
 	$wp_customize->add_setting('font_family', array(
-		'default'			=> __("Varela", 'daowa'),
+		'default'			=> __("Varela", 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
 	$fontsdetailsapi = get_template_directory() . '/fonts/webfonts.json'; // From theme folder
-	//$url = 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBBI2MRKwAX0eCJ61QjhnuTNecswrVenwE'; // From google server
-	$data = file_get_contents($fontsdetailsapi); // put the contents of the file into a variable
-	$data = json_decode($data, true);	// decode the JSON feed as array
+	$data = json_decode($fontsdetailsapi, true);	// decode the JSON feed as array
 	$items = $data["items"];
 	$fonts_list = array();
 	foreach( $items as $item ){ 
@@ -159,7 +160,7 @@ function daowa_customize_register( $wp_customize ) {
 	// font_family Control setup
 	$wp_customize->add_control('font_family', array(
 		'type'     => 'select',
-		'label'    => __( 'Font Family', 'daowa' ),
+		'label'    => __( 'Font Family', 'khaown' ),
 		'choices'  => $fonts_list,
 		'section'  => 'typography',
 		'priority' 		=>  20
@@ -167,51 +168,54 @@ function daowa_customize_register( $wp_customize ) {
 
 	// paragraph_font_style setting setup
 	$wp_customize->add_setting('paragraph_font_style', array(
-		'default'			=> __('normal', 'daowa'),
+		'default'			=> __('normal', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
 	
 	// paragraph_font_style Control setup
 	$wp_customize->add_control('paragraph_font_style', array(
-		'label'			=> __('Font Style', 'daowa'),
+		'label'			=> __('Font Style', 'khaown'),
 		'section' 		=> 'typography',
 		'type'			=> 'select',
 		'choices'  => array(
-			'normal' => _x( 'Normal', 'normal', 'daowa' ),
-			'italic'  => _x( 'Italic', 'italic', 'daowa' )
+			'normal' => _x( 'Normal', 'normal', 'khaown' ),
+			'italic'  => _x( 'Italic', 'italic', 'khaown' )
 		),
 		'priority' 		=>  20
 	) );
 
 	// paragraph_text_transform setting setup
 	$wp_customize->add_setting('paragraph_text_transform', array(
-		'default'			=> __('none', 'daowa'),
+		'default'			=> __('none', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
 	
 	// paragraph_text_transform Control setup
 	$wp_customize->add_control('paragraph_text_transform', array(
-		'label'			=> __('Text Transform', 'daowa'),
+		'label'			=> __('Text Transform', 'khaown'),
 		'section' 		=> 'typography',
 		'type'			=> 'select',
 		'choices'  => array(
-			'none' => _x( 'Default', 'default', 'daowa' ),
-			'uppercase' => _x( 'Uppercase', 'uppercase', 'daowa' ),
-			'lowercase'  => _x( 'Lowercase', 'lowercase', 'daowa' ),
-			'capitalize'  => _x( 'Capitalize', 'capitalize', 'daowa' ),
+			'none' => _x( 'Default', 'default', 'khaown' ),
+			'uppercase' => _x( 'Uppercase', 'uppercase', 'khaown' ),
+			'lowercase'  => _x( 'Lowercase', 'lowercase', 'khaown' ),
+			'capitalize'  => _x( 'Capitalize', 'capitalize', 'khaown' ),
 		),
 		'priority' 		=>  20
 	) );
 
 	// paragraph_font_size setting setup
 	$wp_customize->add_setting('paragraph_font_size', array(
-		'default'			=> __('14', 'daowa'),
+		'default'			=> __('14', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
 	
 	// paragraph_font_size Control setup
 	$wp_customize->add_control('paragraph_font_size', array(
-		'label'			=> __('Font Size', 'daowa'),
+		'label'			=> __('Font Size', 'khaown'),
 		'section' 		=> 'typography',
 		'type'			=> 'number',
 		'priority' 		=>  20
@@ -219,36 +223,38 @@ function daowa_customize_register( $wp_customize ) {
 
 	// paragraph_font_weight setting setup
 	$wp_customize->add_setting('paragraph_font_weight', array(
-		'default'			=> __('300', 'daowa'),
+		'default'			=> __('300', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
 	
 	// paragraph_font_weight Control setup
 	$wp_customize->add_control('paragraph_font_weight', array(
-		'label'			=> __('Font Weight', 'daowa'),
+		'label'			=> __('Font Weight', 'khaown'),
 		'section' 		=> 'typography',
 		'type'			=> 'select',
 		'choices'  => array(
-			'100' => _x( '100', '100', 'daowa' ),
-			'200'  => _x( '200', '200', 'daowa' ),
-			'300'  => _x( '300', '300', 'daowa' ),
-			'400' => _x( '400', '400', 'daowa' ),
-			'500'  => _x( '500', '500', 'daowa' ),
-			'600'  => _x( '600', '600', 'daowa' ),
-			'700'  => _x( '700', '700', 'daowa' ),
+			'100' => _x( '100', '100', 'khaown' ),
+			'200'  => _x( '200', '200', 'khaown' ),
+			'300'  => _x( '300', '300', 'khaown' ),
+			'400' => _x( '400', '400', 'khaown' ),
+			'500'  => _x( '500', '500', 'khaown' ),
+			'600'  => _x( '600', '600', 'khaown' ),
+			'700'  => _x( '700', '700', 'khaown' ),
 		),
 		'priority' 		=>  20
 	) );
 
 	// paragraph_line_height setting setup
 	$wp_customize->add_setting('paragraph_line_height', array(
-		'default'			=> __('24', 'daowa'),
+		'default'			=> __('24', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
 	
 	// paragraph_line_height Control setup
 	$wp_customize->add_control('paragraph_line_height', array(
-		'label'			=> __('Line Height', 'daowa'),
+		'label'			=> __('Line Height', 'khaown'),
 		'section' 		=> 'typography',
 		'type'			=> 'number',
 		'priority' 		=>  20
@@ -256,13 +262,14 @@ function daowa_customize_register( $wp_customize ) {
 
 	// paragraph_letter_spacing setting setup
 	$wp_customize->add_setting('paragraph_letter_spacing', array(
-		'default'			=> __('0', 'daowa'),
+		'default'			=> __('0', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
 	
 	// paragraph_letter_spacing Control setup
 	$wp_customize->add_control('paragraph_letter_spacing', array(
-		'label'			=> __('Letter Spacing', 'daowa'),
+		'label'			=> __('Letter Spacing', 'khaown'),
 		'section' 		=> 'typography',
 		'type'			=> 'number',
 		'priority' 		=>  20
@@ -270,13 +277,14 @@ function daowa_customize_register( $wp_customize ) {
 
 	// paragraph_word_spacing setting setup
 	$wp_customize->add_setting('paragraph_word_spacing', array(
-		'default'			=> __('0', 'daowa'),
+		'default'			=> __('0', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
 	
 	// paragraph_word_spacing Control setup
 	$wp_customize->add_control('paragraph_word_spacing', array(
-		'label'			=> __('Word Spacing', 'daowa'),
+		'label'			=> __('Word Spacing', 'khaown'),
 		'section' 		=> 'typography',
 		'type'			=> 'number',
 		'priority' 		=>  20
@@ -290,26 +298,27 @@ function daowa_customize_register( $wp_customize ) {
 		Heading Section setup
 	*********************************/
 	$wp_customize->add_section('heading', array(
-		'title'			=> __('Heading', 'daowa'),
-		'description'	=> sprintf(__('Setup your theme heading', 'daowa') ),
+		'title'			=> __('Heading', 'khaown'),
+		'description'	=> sprintf(__('Setup your theme heading', 'khaown') ),
 		'priority' 		=> 41
 	) );
 
 	// Heading setting setup
 	$wp_customize->add_setting('heading_1_text_case', array(
-		'default'			=> __('uppercase', 'daowa'),
+		'default'			=> __('uppercase', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
 	
 	// heading Control setup
 	$wp_customize->add_control('heading_1_text_case', array(
 		'type'     => 'select',
-		'label'    => __( 'Heading Text Case', 'daowa' ),
+		'label'    => __( 'Heading Text Case', 'khaown' ),
 		'choices'  => array(
-			'none' => _x( 'Default', 'default', 'daowa' ),
-			'uppercase' => _x( 'Uppercase', 'uppercase', 'daowa' ),
-			'lowercase'  => _x( 'Lowercase', 'lowercase', 'daowa' ),
-			'capitalize'  => _x( 'Capitalize', 'capitalize', 'daowa' ),
+			'none' => _x( 'Default', 'default', 'khaown' ),
+			'uppercase' => _x( 'Uppercase', 'uppercase', 'khaown' ),
+			'lowercase'  => _x( 'Lowercase', 'lowercase', 'khaown' ),
+			'capitalize'  => _x( 'Capitalize', 'capitalize', 'khaown' ),
 		),
 		'section'  => 'heading',
 		'priority' 		=>  20
@@ -317,16 +326,17 @@ function daowa_customize_register( $wp_customize ) {
 
 	// SETTINGS
 	$wp_customize->add_setting('heading_text_color', array(
-		'default'			=> __('#7a7a7a', 'daowa'),
+		'default'			=> __('#7a7a7a', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
 	// CONTROLS
 	$wp_customize->add_control(
-		new WP_Customize_Color_Control( 
+		new WP_Customize_Color_Control(
 			$wp_customize, 
 			'heading_text_color', 
 			array(
-				'label'			=> __('Heading Text Color', 'daowa'),
+				'label'			=> __('Heading Text Color', 'khaown'),
 				'section' 		=> 'heading',
 				'priority' 		=>  20
 			)
@@ -334,13 +344,14 @@ function daowa_customize_register( $wp_customize ) {
 	);
 	// Heading setting setup
 	$wp_customize->add_setting('heading_1_letter_spacing', array(
-		'default'			=> __('1', 'daowa'),
+		'default'			=> __('1', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
 	
 	// heading Control setup
 	$wp_customize->add_control('heading_1_letter_spacing', array(
-		'label'			=> __('Heading Letter Spacing', 'daowa'),
+		'label'			=> __('Heading Letter Spacing', 'khaown'),
 		'section' 		=> 'heading',
 		'type'			=> 'number',
 		'priority' 		=>  20
@@ -348,13 +359,14 @@ function daowa_customize_register( $wp_customize ) {
 
 	// Heading setting setup
 	$wp_customize->add_setting('heading_wordspecing_spacing', array(
-		'default'			=> __('0', 'daowa'),
+		'default'			=> __('0', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
 	
 	// heading Control setup
 	$wp_customize->add_control('heading_wordspecing_spacing', array(
-		'label'			=> __('Heading Word Spacing', 'daowa'),
+		'label'			=> __('Heading Word Spacing', 'khaown'),
 		'section' 		=> 'heading',
 		'type'			=> 'number',
 		'priority' 		=>  20
@@ -363,75 +375,80 @@ function daowa_customize_register( $wp_customize ) {
 	
 	// Heading setting setup
 	$wp_customize->add_setting('heading_1_font_weight', array(
-		'default'			=> __('300', 'daowa'),
+		'default'			=> __('300', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
 	
 	// heading Control setup
 	$wp_customize->add_control('heading_1_font_weight', array(
 		'type'     => 'select',
-		'label'    => __( 'Heading Font Weight', 'daowa' ),
+		'label'    => __( 'Heading Font Weight', 'khaown' ),
 		'choices'  => array(
-			'100' => _x( '100', '100', 'daowa' ),
-			'200'  => _x( '200', '200', 'daowa' ),
-			'300'  => _x( '300', '300', 'daowa' ),
-			'400' => _x( '400', '400', 'daowa' ),
-			'500'  => _x( '500', '500', 'daowa' ),
-			'600'  => _x( '600', '600', 'daowa' ),
-			'700'  => _x( '700', '700', 'daowa' ),
+			'100' => _x( '100', '100', 'khaown' ),
+			'200'  => _x( '200', '200', 'khaown' ),
+			'300'  => _x( '300', '300', 'khaown' ),
+			'400' => _x( '400', '400', 'khaown' ),
+			'500'  => _x( '500', '500', 'khaown' ),
+			'600'  => _x( '600', '600', 'khaown' ),
+			'700'  => _x( '700', '700', 'khaown' ),
 		),
 		'section'  => 'heading',
 		'priority' 		=>  20
 	) );
 	// Heading setting setup
 	$wp_customize->add_setting('heading_1_font_size', array(
-		'default'			=> __('28', 'daowa'),
+		'default'			=> __('28', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
 	
 	// heading Control setup
 	$wp_customize->add_control('heading_1_font_size', array(
-		'label'			=> __('H1 Font Size', 'daowa'),
+		'label'			=> __('H1 Font Size', 'khaown'),
 		'section' 		=> 'heading',
 		'type'			=> 'number',
 		'priority' 		=>  20
 	) );
 	// Heading setting setup
 	$wp_customize->add_setting('heading_1_line_height', array(
-		'default'			=> __( '36', 'daowa'),
+		'default'			=> __( '36', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
 	
 	// heading Control setup
 	$wp_customize->add_control('heading_1_line_height', array(
 		'type'     => 'number',
-		'label'    => __( 'H1 Line Height', 'daowa' ),
+		'label'    => __( 'H1 Line Height', 'khaown' ),
 		'section'  => 'heading',
 		'priority' 		=>  20
 	) );
 	// Heading setting setup
 	$wp_customize->add_setting('heading_h2_font_size', array(
-		'default'			=> __('24', 'daowa'),
+		'default'			=> __('24', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
 	
 	// heading Control setup
 	$wp_customize->add_control('heading_h2_font_size', array(
-		'label'			=> __('H2 Font Size', 'daowa'),
+		'label'			=> __('H2 Font Size', 'khaown'),
 		'section' 		=> 'heading',
 		'type'			=> 'number',
 		'priority' 		=>  20
 	) );
 	// Heading setting setup
 	$wp_customize->add_setting('heading_h2_line_height', array(
-		'default'			=> __( '32', 'daowa'),
+		'default'			=> __( '32', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
 	
 	// heading Control setup
 	$wp_customize->add_control('heading_h2_line_height', array(
 		'type'     => 'number',
-		'label'    => __( 'H2 Line Height', 'daowa' ),
+		'label'    => __( 'H2 Line Height', 'khaown' ),
 		'section'  => 'heading',
 		'priority' 		=>  20
 	) );
@@ -441,8 +458,8 @@ function daowa_customize_register( $wp_customize ) {
 		Navigation Bar Section setup
 	*********************************/
 	$wp_customize->add_section('nav_bar', array(
-		'title'			=> __('Navigation Bar', 'daowa'),
-		'description'	=> sprintf(__('Setup your theme Navigation', 'daowa') ),
+		'title'			=> __('Navigation Bar', 'khaown'),
+		'description'	=> sprintf(__('Setup your theme Navigation', 'khaown') ),
 		'priority' 		=> 41
 	) );
 
@@ -462,7 +479,8 @@ function daowa_customize_register( $wp_customize ) {
 		$wp_customize->add_setting(
 			$colors['slug'], array(
 				'default' => $colors['default'],
-				'type' => 'theme_mod',
+				'sanitize_callback'  => 'esc_attr',
+				'type' => 'theme_mod'
 			)
 		);
 		// CONTROLS
@@ -479,20 +497,22 @@ function daowa_customize_register( $wp_customize ) {
 	}
 	// Heading setting setup
 	$wp_customize->add_setting('nav_bar_font_size', array(
-		'default'			=> __( '15', 'daowa'),
+		'default'			=> __( '15', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
 	
 	// heading Control setup
 	$wp_customize->add_control('nav_bar_font_size', array(
 		'type'     => 'number',
-		'label'    => __( 'Nav Bar Font Size', 'daowa' ),
+		'label'    => __( 'Nav Bar Font Size', 'khaown' ),
 		'section'  => 'nav_bar',
 		'priority' 		=>  20
 	) );
 	// Heading setting setup
 	$wp_customize->add_setting('nav_bar_font_weight', array(
-		'default'			=> __( '500', 'daowa'),
+		'default'			=> __( '500', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
 	
@@ -500,64 +520,55 @@ function daowa_customize_register( $wp_customize ) {
 	$wp_customize->add_control('nav_bar_font_weight', array(
 		'type'     => 'select',
 		'choices'  => array(
-			'100' => _x( '100', '100', 'daowa' ),
-			'200'  => _x( '200', '200', 'daowa' ),
-			'300'  => _x( '300', '300', 'daowa' ),
-			'400' => _x( '400', '400', 'daowa' ),
-			'500'  => _x( '500', '500', 'daowa' ),
-			'600'  => _x( '600', '600', 'daowa' ),
-			'700'  => _x( '700', '700', 'daowa' ),
+			'100' => _x( '100', '100', 'khaown' ),
+			'200'  => _x( '200', '200', 'khaown' ),
+			'300'  => _x( '300', '300', 'khaown' ),
+			'400' => _x( '400', '400', 'khaown' ),
+			'500'  => _x( '500', '500', 'khaown' ),
+			'600'  => _x( '600', '600', 'khaown' ),
+			'700'  => _x( '700', '700', 'khaown' ),
 		),
-		'label'    => __( 'Nav Bar Font Weight', 'daowa' ),
+		'label'    => __( 'Nav Bar Font Weight', 'khaown' ),
 		'section'  => 'nav_bar',
 		'priority' 		=>  20
 	) );
 
-	$nav_styles[] = array(
-		'slug'		=>	'nav_bar_margin_right',
+	// Heading setting setup
+	$wp_customize->add_setting('nav_bar_margin_right', array(
+		'default'			=> __( '15', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
+		'type' 				=> 'theme_mod'
+	) );
+	
+	// heading Control setup
+	$wp_customize->add_control('nav_bar_margin_right', array(
 		'type'		=>	'number',
-		'default' 	=> 	__( '25', 'daowa'),
+		'default' 	=> 	__( '25', 'khaown'),
 		'label' 	=> 	'Margin Right',
 		'section'  	=> 	'nav_bar',
 		'priority' 	=>  20
-	);
-	foreach( $nav_styles as $styles ) {	
-		// SETTINGS
-		$wp_customize->add_setting($styles['slug'], array(
-				'default' => $styles['default'],
-				'type' => 'theme_mod',
-			)
-		);
-		// CONTROLS
-		$wp_customize->add_control($styles['slug'], array(
-			'label' => $styles['label'], 
-			'section' => $styles['section'], 
-			'type' => $styles['type'], 
-			'priority' 		=>  20,
-			'settings' => $styles['slug'])
-		);
-	}
-
+	) );
 
 	/**********************************
 		Header Top Section setup
 	*********************************/
 	$wp_customize->add_section('top_header', array(
-		'title'			=> __('Top Header', 'daowa'),
-		'description'	=> sprintf(__('Setup your theme Top header', 'daowa') ),
+		'title'			=> __('Top Header', 'khaown'),
+		'description'	=> sprintf(__('Setup your theme Top header', 'khaown') ),
 		'priority' 		=> 41
 	) );
 
 	// Heading setting setup
 	$wp_customize->add_setting('display_header_or_not', array(
-		'default'			=> __( '0', 'daowa'),
+		'default'			=> __( '0', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
 	
 	// heading Control setup
 	$wp_customize->add_control('display_header_or_not', array(
 		'type'     => 'checkbox',
-		'label'    => __( 'Hide Top Header', 'daowa' ),
+		'label'    => __( 'Hide Top Header', 'khaown' ),
 		'section'  => 'top_header',
 		'priority' 		=>  20
 	) );
@@ -585,7 +596,8 @@ function daowa_customize_register( $wp_customize ) {
 		$wp_customize->add_setting(
 			$colors['slug'], array(
 				'default' => $colors['default'],
-				'type' => 'theme_mod',
+				'sanitize_callback'  => 'esc_attr',
+				'type' => 'theme_mod'
 			)
 		);
 		// CONTROLS
@@ -603,20 +615,22 @@ function daowa_customize_register( $wp_customize ) {
 
 	// Heading setting setup
 	$wp_customize->add_setting('site_title_font_size', array(
-		'default'			=> __( '32', 'daowa'),
+		'default'			=> __( '32', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
 	
 	// heading Control setup
 	$wp_customize->add_control('site_title_font_size', array(
 		'type'     => 'number',
-		'label'    => __( 'Site Title Font Size', 'daowa' ),
+		'label'    => __( 'Site Title Font Size', 'khaown' ),
 		'section'  => 'top_header',
 		'priority' 		=>  20
 	) );
 	// Heading setting setup
 	$wp_customize->add_setting('site_title_font_weight', array(
-		'default'			=> __( '500', 'daowa'),
+		'default'			=> __( '500', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
 	
@@ -624,64 +638,58 @@ function daowa_customize_register( $wp_customize ) {
 	$wp_customize->add_control('site_title_font_weight', array(
 		'type'     => 'select',
 		'choices'  => array(
-			'100' => _x( '100', '100', 'daowa' ),
-			'200'  => _x( '200', '200', 'daowa' ),
-			'300'  => _x( '300', '300', 'daowa' ),
-			'400' => _x( '400', '400', 'daowa' ),
-			'500'  => _x( '500', '500', 'daowa' ),
-			'600'  => _x( '600', '600', 'daowa' ),
-			'700'  => _x( '700', '700', 'daowa' ),
+			'100' => _x( '100', '100', 'khaown' ),
+			'200'  => _x( '200', '200', 'khaown' ),
+			'300'  => _x( '300', '300', 'khaown' ),
+			'400' => _x( '400', '400', 'khaown' ),
+			'500'  => _x( '500', '500', 'khaown' ),
+			'600'  => _x( '600', '600', 'khaown' ),
+			'700'  => _x( '700', '700', 'khaown' ),
 		),
-		'label'    => __( 'Site Title Font Weight', 'daowa' ),
+		'label'    => __( 'Site Title Font Weight', 'khaown' ),
 		'section'  => 'top_header',
 		'priority' 		=>  20
 	) );
 	// Heading setting setup
 	$wp_customize->add_setting('site_title_margin_bottom', array(
-		'default'			=> __( '42', 'daowa'),
+		'default'			=> __( '42', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
 	
 	// heading Control setup
 	$wp_customize->add_control('site_title_margin_bottom', array(
 		'type'     => 'number',
-		'label'    => __( 'Site Title Bottom Space', 'daowa' ),
+		'label'    => __( 'Site Title Bottom Space', 'khaown' ),
 		'section'  => 'top_header',
 		'priority' 		=>  20
 	) );
 	// Heading setting setup
 	$wp_customize->add_setting('site_desc_font_size', array(
-		'default'			=> __( '20', 'daowa'),
+		'default'			=> __( '20', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
 	
 	// heading Control setup
 	$wp_customize->add_control('site_desc_font_size', array(
 		'type'     => 'number',
-		'label'    => __( 'Site Title Font Size', 'daowa' ),
+		'label'    => __( 'Site Title Font Size', 'khaown' ),
 		'section'  => 'top_header',
 		'priority' 		=>  20
 	) );
 
-	
-
-	
-
-	
-
-
-
 
 	
 }
-add_action( 'customize_register', 'daowa_customize_register' );
+add_action( 'customize_register', 'khaown_customize_register' );
 
 /**
  * Render the site title for the selective refresh partial.
  *
  * @return void
  */
-function daowa_customize_partial_blogname() {
+function khaown_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
@@ -690,42 +698,22 @@ function daowa_customize_partial_blogname() {
  *
  * @return void
  */
-function daowa_customize_partial_blogdescription() {
+function khaown_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
 /**
  * Bind JS handlers to instantly live-preview changes.
  */
-function daowa_customize_preview_js() {
-	wp_enqueue_script( 'daowa-customize-preview', get_theme_file_uri( '/js/customize-preview.js' ), array( 'customize-preview' ), '20181231', true );
+function khaown_customize_preview_js() {
+	wp_enqueue_script( 'khaown-customize-preview', get_theme_file_uri( '/js/customize-preview.js' ), array( 'customize-preview' ), '20181231', true );
 }
-add_action( 'customize_preview_init', 'daowa_customize_preview_js' );
+add_action( 'customize_preview_init', 'khaown_customize_preview_js' );
 
 /**
  * Load dynamic logic for the customizer controls area.
  */
-function daowa_panels_js() {
-	wp_enqueue_script( 'daowa-customize-controls', get_theme_file_uri( '/js/customize-controls.js' ), array(), '20181231', true );
+function khaown_panels_js() {
+	wp_enqueue_script( 'khaown-customize-controls', get_theme_file_uri( '/js/customize-controls.js' ), array(), '20181231', true );
 }
-add_action( 'customize_controls_enqueue_scripts', 'daowa_panels_js' );
-
-/**
- * Sanitize custom color choice.
- *
- * @param string $choice Whether image filter is active.
- *
- * @return string
- */
-function daowa_sanitize_color_option( $choice ) {
-	$valid = array(
-		'default',
-		'custom',
-	);
-
-	if ( in_array( $choice, $valid, true ) ) {
-		return $choice;
-	}
-
-	return 'default';
-}
+add_action( 'customize_controls_enqueue_scripts', 'khaown_panels_js' );

@@ -3,7 +3,7 @@
  * Custom comment walker for this theme
  *
  * @package WordPress
- * @subpackage Daowa
+ * @subpackage khaown
  * @since 1.0.0
  */
 
@@ -12,7 +12,7 @@
  *
  * @since 1.0.0
  */
-class daowa_Walker_Comment extends Walker_Comment {
+class khaown_Walker_Comment extends Walker_Comment {
 
 	/**
 	 * Outputs a comment in the HTML5 format.
@@ -48,22 +48,22 @@ class daowa_Walker_Comment extends Walker_Comment {
 						 * Using the `check` icon instead of `check_circle`, since we can't add a
 						 * fill color to the inner check shape when in circle form.
 						 */
-						if ( daowa_is_comment_by_post_author( $comment ) ) {
-							printf( '<span class="post-author-badge" aria-hidden="true">%s</span>', daowa_get_icon_svg( 'check', 24 ) );
+						if ( khaown_is_comment_by_post_author( $comment ) ) {
+							printf( '<span class="post-author-badge" aria-hidden="true">%s</span>', khaown_get_icon_svg( 'check', 24 ) );
 						}
 
 						/*
 						 * Using the `check` icon instead of `check_circle`, since we can't add a
 						 * fill color to the inner check shape when in circle form.
 						 */
-						if ( daowa_is_comment_by_post_author( $comment ) ) {
-							printf( '<span class="post-author-badge" aria-hidden="true">%s</span>', daowa_get_icon_svg( 'check', 24 ) );
+						if ( khaown_is_comment_by_post_author( $comment ) ) {
+							printf( '<span class="post-author-badge" aria-hidden="true">%s</span>', khaown_get_icon_svg( 'check', 24 ) );
 						}
 
 						printf(
 							/* translators: %s: comment author link */
 							wp_kses(
-								__( '%s <span class="screen-reader-text says">says:</span>', 'daowa' ),
+								__( '%s <span class="screen-reader-text says">says:</span>', 'khaown' ),
 								array(
 									'span' => array(
 										'class' => array(),
@@ -83,20 +83,20 @@ class daowa_Walker_Comment extends Walker_Comment {
 						<a href="<?php echo esc_url( get_comment_link( $comment, $args ) ); ?>">
 							<?php
 								/* translators: 1: comment date, 2: comment time */
-								$comment_timestamp = sprintf( __( '%1$s at %2$s', 'daowa' ), get_comment_date( '', $comment ), get_comment_time() );
+								$comment_timestamp = sprintf( __( '%1$s at %2$s', 'khaown' ), get_comment_date( '', $comment ), get_comment_time() );
 							?>
 							<time datetime="<?php comment_time( 'c' ); ?>" title="<?php echo $comment_timestamp; ?>">
 								<?php echo $comment_timestamp; ?>
 							</time>
 						</a>
 						<?php
-							$edit_comment_icon = daowa_get_icon_svg( 'edit', 16 );
-							edit_comment_link( __( 'Edit', 'daowa' ), '<span class="edit-link-sep">&mdash;</span> <span class="edit-link">' . $edit_comment_icon, '</span>' );
+							$edit_comment_icon = khaown_get_icon_svg( 'edit', 16 );
+							edit_comment_link( __( 'Edit', 'khaown' ), '<span class="edit-link-sep">&mdash;</span> <span class="edit-link">' . $edit_comment_icon, '</span>' );
 						?>
 					</div><!-- .comment-metadata -->
 
 					<?php if ( '0' == $comment->comment_approved ) : ?>
-					<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'daowa' ); ?></p>
+					<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'khaown' ); ?></p>
 					<?php endif; ?>
 				</footer><!-- .comment-meta -->
 

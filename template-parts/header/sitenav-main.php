@@ -10,7 +10,7 @@
                 array(  
                     'theme_location' => 'menu-1',
                     'menu' => 'Main Navigation', 
-                    'container_id' => 'daowa-main-menu', 
+                    'container_id' => 'khaown-main-menu', 
                     'walker' => new CSS_Menu_Maker_Walker()
                 )
             ); 

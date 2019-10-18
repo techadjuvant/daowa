@@ -5,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
  * @package WordPress
- * @subpackage Daowa
+ * @subpackage khaown
  * @since 1.0.0
  */
 
@@ -40,19 +40,19 @@ get_header();
 									the_post_navigation(
 										array(
 											/* translators: %s: parent post link */
-											'prev_text' => sprintf( __( '<span class="meta-nav">Published in</span><span class="daowa-post-title">%s</span>', 'daowa' ), '%title' ),
+											'prev_text' => sprintf( __( '<span class="meta-nav">Published in</span><span class="khaown-post-title">%s</span>', 'khaown' ), '%title' ),
 										)
 									);
 								} elseif ( is_singular( 'post' ) ) {
 									// Previous/next post navigation.
 									the_post_navigation(
 										array(
-											'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next Post', 'daowa' ) . '</span> ' .
-												'<span class="screen-reader-text">' . __( 'Next post:', 'daowa' ) . '</span> <br/>' .
-												'<span class="daowa-post-title">%title</span>',
-											'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous Post', 'daowa' ) . '</span> ' .
-												'<span class="screen-reader-text">' . __( 'Previous post:', 'daowa' ) . '</span> <br/>' .
-												'<span class="daowa-post-title">%title</span>',
+											'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next Post', 'khaown' ) . '</span> ' .
+												'<span class="screen-reader-text">' . __( 'Next post:', 'khaown' ) . '</span> <br/>' .
+												'<span class="khaown-post-title">%title</span>',
+											'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous Post', 'khaown' ) . '</span> ' .
+												'<span class="screen-reader-text">' . __( 'Previous post:', 'khaown' ) . '</span> <br/>' .
+												'<span class="khaown-post-title">%title</span>',
 										)
 									);
 								}

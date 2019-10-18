@@ -7,7 +7,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package WordPress
- * @subpackage Daowa
+ * @subpackage khaown
  * @since 1.0.0
  */
 
@@ -19,10 +19,10 @@
 			<?php if ( ! empty( $blog_info ) ) : ?>
 				<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,
 			<?php endif; ?>
-			<a target="_blank" href="<?php echo esc_url( __( 'http://e-motahar.com', 'daowa' ) ); ?>" class="imprint">
+			<a target="_blank" href="<?php echo esc_url( __( 'http://e-motahar.com', 'khaown' ) ); ?>" class="imprint">
 				<?php
 				/* translators: %s: WordPress. */
-				printf( __( 'Proudly powered by %s.', 'daowa' ), 'Motahar' );
+				printf( __( 'Proudly powered by %s.', 'khaown' ), 'Motahar' );
 				?>
 			</a>
 			<?php
@@ -31,7 +31,7 @@
 			}
 			?>
 			<?php if ( has_nav_menu( 'footer' ) ) : ?>
-				<nav class="footer-navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'daowa' ); ?>">
+				<nav class="footer-navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'khaown' ); ?>">
 					<?php
 					wp_nav_menu(
 						array(

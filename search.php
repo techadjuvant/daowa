@@ -5,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
  * @package WordPress
- * @subpackage Daowa
+ * @subpackage khaown
  * @since 1.0.0
  */
 
@@ -39,7 +39,7 @@ get_header();
             <div class="blog-posts em-site-content">
                 <div class="row">
                     <div class="col-md-9 col-xs-12">
-						<main id="daowa-main" class="daowa-site-main">
+						<main id="khaown-main" class="khaown-site-main">
 							<?php
 								if ( have_posts() ) {
 									// Load posts loop.
@@ -48,7 +48,7 @@ get_header();
 										get_template_part( 'template-parts/content/content', 'excerpt');
 									}
 									// Previous/next page navigation.
-									daowa_the_posts_navigation();
+									khaown_the_posts_navigation();
 								} else {
 									// If no content, include the "No posts found" template.
 									get_template_part( 'template-parts/content/content', 'none' );

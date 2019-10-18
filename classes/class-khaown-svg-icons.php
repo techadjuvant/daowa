@@ -3,7 +3,7 @@
  * SVG Icons class
  *
  * @package WordPress
- * @subpackage Daowa
+ * @subpackage khaown
  * @since 1.0.0
  */
 
@@ -19,7 +19,7 @@
  *
  * @since 1.0.0
  */
-class daowa_SVG_Icons {
+class khaown_SVG_Icons {
 
 	/**
 	 * Gets the SVG code for a given icon.
