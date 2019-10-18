@@ -457,8 +457,7 @@ function daowa_customize_register( $wp_customize ) {
 		'default' => '#000000',
 		'label' => 'Text Color'
 	);
-	foreach( $nav_colors as $colors ) {
-	
+	foreach( $nav_colors as $colors ) {	
 		// SETTINGS
 		$wp_customize->add_setting(
 			$colors['slug'], array(
@@ -513,19 +512,31 @@ function daowa_customize_register( $wp_customize ) {
 		'section'  => 'nav_bar',
 		'priority' 		=>  20
 	) );
-	// Heading setting setup
-	$wp_customize->add_setting('nav_bar_margin_right', array(
-		'default'			=> __( '25', 'daowa'),
-		'type' 				=> 'theme_mod'
-	) );
-	
-	// heading Control setup
-	$wp_customize->add_control('nav_bar_margin_right', array(
-		'type'     => 'number',
-		'label'    => __( 'Margin Right', 'daowa' ),
-		'section'  => 'nav_bar',
-		'priority' 		=>  20
-	) );
+
+	$nav_styles[] = array(
+		'slug'		=>	'nav_bar_margin_right',
+		'type'		=>	'number',
+		'default' 	=> 	__( '25', 'daowa'),
+		'label' 	=> 	'Margin Right',
+		'section'  	=> 	'nav_bar',
+		'priority' 	=>  20
+	);
+	foreach( $nav_styles as $styles ) {	
+		// SETTINGS
+		$wp_customize->add_setting($styles['slug'], array(
+				'default' => $styles['default'],
+				'type' => 'theme_mod',
+			)
+		);
+		// CONTROLS
+		$wp_customize->add_control($styles['slug'], array(
+			'label' => $styles['label'], 
+			'section' => $styles['section'], 
+			'type' => $styles['type'], 
+			'priority' 		=>  20,
+			'settings' => $styles['slug'])
+		);
+	}
 
 
 	/**********************************
@@ -539,7 +550,7 @@ function daowa_customize_register( $wp_customize ) {
 
 	// Heading setting setup
 	$wp_customize->add_setting('display_header_or_not', array(
-		'default'			=> __( '1', 'daowa'),
+		'default'			=> __( '0', 'daowa'),
 		'type' 				=> 'theme_mod'
 	) );
 	

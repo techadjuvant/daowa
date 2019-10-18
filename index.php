@@ -20,7 +20,7 @@ get_header();
 <div class="main-container">
 <?php 
 	$show = get_theme_mod("display_header_or_not", "");
-	if($show) : 
+	if(!$show) : 
 ?>
     <section class="page-title page-title-4 bg-menu-4">
         <div class="container">
