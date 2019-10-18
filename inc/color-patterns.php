@@ -67,46 +67,116 @@ function daowa_custom_colors_css() {
 	$lightness_selection = apply_filters( "daowa_custom_colors_lightness_selection", 90 );
 	$lightness_selection = absint( $lightness_selection ) . "%";
 
-	$theme_css = "
-		/*
-		 * Set background for:
-		 * - featured image :before
-		 * - featured image :before
-		 * - post thumbmail :before
-		 * - post thumbmail :before
-		 * - Submenu
-		 * - Sticky Post
-		 * - buttons
-		 * - WP Block Button
-		 * - Blocks
-		 */
+	$font_Choice = get_theme_mod("default_or_customfont", "");
+	if( $font_Choice === "default_font") : 
 		
-		@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
+		$theme_css = " 
+	
+			@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
+			body {
+				font-family: 'Varela Round', sans-serif;
+			}
+			a, a:visited, .widget a {
+				font-family: 'Varela Round', sans-serif;
+			}
+			h1, h2, h3, h4, h5, h6, p, ul, ol, pre, table, blockquote, input, button, select, textarea, .blog-posts .row p, span, button, .btn {
+				font-family: 'Varela Round', sans-serif;
+			} 
+	";
+	endif;
 
-		@import url('" . get_theme_mod("font_family_source", "") . "');
+	if( $font_Choice === "custom_font") : 
+		$theme_css = " 
+			@import url('https://fonts.googleapis.com/css?family=" . get_theme_mod("font_family", "") . "&display=swap');
+			body {
+				font-family: " . get_theme_mod("font_family", "") . ";
+			}
+			a, a:visited, .widget a {
+				font-family: " . get_theme_mod("font_family", "") . ";
+			}
+			h1, h2, h3, h4, h5, h6, p, ul, ol, pre, table, blockquote, input, button, select, textarea, .blog-posts .row p, span, button, .btn {
+				font-family: " . get_theme_mod("font_family", "") . ";
+			}
+		"; 
+	endif;
+
+	$theme_css .= "
 
 		body {
 			background-color: " . get_theme_mod("bg_color_scheme_1", "") . ";
 		}
-		h1, h2, h3, h4, h5, h6, p, ul, ol, pre, table, blockquote, input, button, select, textarea, .blog-posts .row p {
+		p, .row p, span, button, .btn, .blog-posts .row p {
+			font-size: " . get_theme_mod("paragraph_font_size", "") . "px;
+			font-weight: " . get_theme_mod("paragraph_font_weight", "") . ";
+			font-style: " . get_theme_mod("paragraph_font_style", "") . ";
+			line-height: " . get_theme_mod("paragraph_line_height", "") . "px;
+			letter-spacing: " . get_theme_mod("paragraph_letter_spacing", "") . "px;
+			word-spacing: " . get_theme_mod("paragraph_word_spacing", "") . "px;
 			color: " . get_theme_mod("text_color", "") . ";
-			font-family: 'Varela Round', sans-serif;
-			font-family: " . get_theme_mod("font_family", "") . "
 		}
-		h1{
-			font-size: " . get_theme_mod("heading_1_font_size", "") . "px;
+		a, .widget a {
+			font-size: " . get_theme_mod("paragraph_font_size", "") . "px;
+			font-weight: " . get_theme_mod("paragraph_font_weight", "") . ";
+			color: " . get_theme_mod("link_color", "") . ";
+			font-style: " . get_theme_mod("paragraph_font_style", "") . ";
+			line-height: " . get_theme_mod("paragraph_line_height", "") . "px;
+			letter-spacing: " . get_theme_mod("paragraph_letter_spacing", "") . "px;
+			word-spacing: " . get_theme_mod("paragraph_word_spacing", "") . "px;
+		}
+
+		a:hover, a:visited, a:active, .widget a:hover, .post-navigation .nav-links a:hover, .entry .entry-meta a:hover, .entry .entry-footer a:hover {
+			color: " . get_theme_mod("hover_link_color", "") . ";
+		}
+
+		h1, h2, h3, h4, h5, h6, p, ul, ol, pre, table, blockquote, input, button, select, textarea, .blog-posts .row p, span, button, .btn {
+			font-style: " . get_theme_mod("paragraph_font_style", "") . ";
+		}
+
+		h1, h2, h3, h4, h5, h6 {		
 			font-weight: " . get_theme_mod("heading_1_font_weight", "") . ";
 			letter-spacing: " . get_theme_mod("heading_1_letter_spacing", "") . "px;
 			text-transform: " . get_theme_mod("heading_1_text_case", "") . ";
+			color: " . get_theme_mod("heading_text_color", "") . ";
+		}
+		h1 {
+			font-size: " . get_theme_mod("heading_1_font_size", "") . "px;
 			line-height: " . get_theme_mod("heading_1_line_height", "") . "px;
-			
 		}
-		p {
-			font-size: " . get_theme_mod("paragraph_font_size", "") . "px;
+		h2, .widget h2.widget-title {
+			font-size: " . get_theme_mod("heading_h2_font_size", "") . "px;
+			line-height: " . get_theme_mod("heading_h2_line_height", "") . "px;
 		}
+
+
 		.bg-menu-4 {
 			background-color: " . get_theme_mod("homepage_header_bg_color", "") . ";
 		}
+		.page-title h1.daowa-site-title a {
+			color: " . get_theme_mod("top_header_site_tile_color", "") . ";
+			font-size: " . get_theme_mod("site_title_font_size", "") . "px;
+			font-weight: " . get_theme_mod("site_title_font_weight", "") . ";
+			margin-bottom: " . get_theme_mod("site_title_margin_bottom", "") . "px;
+		  }
+		.page-title h1.daowa-site-title {
+			font-size: " . get_theme_mod("site_title_font_size", "") . "px;
+			font-weight: " . get_theme_mod("site_title_font_weight", "") . ";
+			margin-bottom: " . get_theme_mod("site_title_margin_bottom", "") . "px;
+			color: " . get_theme_mod("top_header_site_tile_color", "") . ";
+		}
+		p.daowa-site-description {
+			color: " . get_theme_mod("top_header_site_desc_color", "") . ";
+			font-size: " . get_theme_mod("site_desc_font_size", "") . "px;
+		}
+
+		nav, .menu > li ul {
+			background: " . get_theme_mod("nav_bar_bg_color", "") . ";
+		}
+		nav .menu ul li span {
+			color: " . get_theme_mod("nav_bar_text_color", "") . ";
+		}
+
+
+
 		.blog-posts .row .bg-color-blog-posts {
 			background: " . get_theme_mod("sidebar_background_color", "") . ";
 		}
@@ -122,23 +192,7 @@ function daowa_custom_colors_css() {
 			color: " . get_theme_mod("veriant_posts_text_color", "") . ";
 		}
 
-		h1.daowa-site-title a {
-			color: #333347;
-		  }
-		h1.daowa-site-title {
-			font-size: 42px;
-			line-height: 48px;
-		}
-		p.daowa-site-description {
-			color: #5f5f5f;
-		}
-
-		a, a:visited, .widget a {
-			color: " . get_theme_mod("link_color", "") . ";
-		}
-		a:hover, a:active, .widget a:hover, .post-navigation .nav-links a:hover, .entry .entry-meta a:hover, .entry .entry-footer a:hover {
-			color: " . get_theme_mod("hover_link_color", "") . ";
-		}
+		
 
 		@media all and (max-width: 426px) {
 			h1 {
