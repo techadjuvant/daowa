@@ -478,6 +478,54 @@ function daowa_customize_register( $wp_customize ) {
 			)
 		);
 	}
+	// Heading setting setup
+	$wp_customize->add_setting('nav_bar_font_size', array(
+		'default'			=> __( '15', 'daowa'),
+		'type' 				=> 'theme_mod'
+	) );
+	
+	// heading Control setup
+	$wp_customize->add_control('nav_bar_font_size', array(
+		'type'     => 'number',
+		'label'    => __( 'Nav Bar Font Size', 'daowa' ),
+		'section'  => 'nav_bar',
+		'priority' 		=>  20
+	) );
+	// Heading setting setup
+	$wp_customize->add_setting('nav_bar_font_weight', array(
+		'default'			=> __( '500', 'daowa'),
+		'type' 				=> 'theme_mod'
+	) );
+	
+	// heading Control setup
+	$wp_customize->add_control('nav_bar_font_weight', array(
+		'type'     => 'select',
+		'choices'  => array(
+			'100' => _x( '100', '100', 'daowa' ),
+			'200'  => _x( '200', '200', 'daowa' ),
+			'300'  => _x( '300', '300', 'daowa' ),
+			'400' => _x( '400', '400', 'daowa' ),
+			'500'  => _x( '500', '500', 'daowa' ),
+			'600'  => _x( '600', '600', 'daowa' ),
+			'700'  => _x( '700', '700', 'daowa' ),
+		),
+		'label'    => __( 'Nav Bar Font Weight', 'daowa' ),
+		'section'  => 'nav_bar',
+		'priority' 		=>  20
+	) );
+	// Heading setting setup
+	$wp_customize->add_setting('nav_bar_margin_right', array(
+		'default'			=> __( '25', 'daowa'),
+		'type' 				=> 'theme_mod'
+	) );
+	
+	// heading Control setup
+	$wp_customize->add_control('nav_bar_margin_right', array(
+		'type'     => 'number',
+		'label'    => __( 'Margin Right', 'daowa' ),
+		'section'  => 'nav_bar',
+		'priority' 		=>  20
+	) );
 
 
 	/**********************************

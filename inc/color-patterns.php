@@ -173,6 +173,11 @@ function daowa_custom_colors_css() {
 		}
 		nav .menu ul li span {
 			color: " . get_theme_mod("nav_bar_text_color", "") . ";
+			font-size: " . get_theme_mod("nav_bar_font_size", "") . "px;
+			font-weight: " . get_theme_mod("nav_bar_font_weight", "") . ";
+		}
+		.menu > li {
+			margin-right: " . get_theme_mod("nav_bar_margin_right", "") . "px;
 		}
 
 
