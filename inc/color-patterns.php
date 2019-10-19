@@ -197,6 +197,10 @@ function khaown_custom_colors_css() {
 			color: " . get_theme_mod("veriant_posts_text_color", "") . ";
 		}
 
+		.site-branding {
+			margin: 0;
+		}
+
 		
 
 		@media all and (max-width: 426px) {

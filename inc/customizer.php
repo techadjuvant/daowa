@@ -42,7 +42,7 @@ function khaown_customize_register( $wp_customize ) {
 	// main color ( site title, h1, h2, h4. h6, widget headings, nav links, footer headings )
 	$bgcolors[] = array(
 		'slug'=>'bg_color_scheme_1', 
-		'default' => '#1e7e7e',
+		'default' => '#ffffff',
 		'label' => 'Body Background Color'
 	);
 	// secondary color ( site description, sidebar headings, h3, h5, nav links on hover )
@@ -145,23 +145,16 @@ function khaown_customize_register( $wp_customize ) {
 
 	// font_family setting setup
 	$wp_customize->add_setting('font_family', array(
-		'default'			=> __("Varela", 'khaown'),
+		'default'			=> __("Rajdhani", 'khaown'),
 		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
-	$fontsdetailsapi = get_template_directory() . '/fonts/webfonts.json'; // From theme folder
-	$data = json_decode($fontsdetailsapi, true);	// decode the JSON feed as array
-	$items = $data["items"];
-	$fonts_list = array();
-	foreach( $items as $item ){ 
-		$list = $item["family"]; 
-		$fonts_list[$list] = $list;
-	}
+
+
 	// font_family Control setup
 	$wp_customize->add_control('font_family', array(
-		'type'     => 'select',
-		'label'    => __( 'Font Family', 'khaown' ),
-		'choices'  => $fonts_list,
+		'type'     => 'textarea',
+		'label'    => __( 'Copy Font Family From fonts.google.com', 'khaown' ),
 		'section'  => 'typography',
 		'priority' 		=>  20
 	) );
@@ -666,7 +659,7 @@ function khaown_customize_register( $wp_customize ) {
 	) );
 	// Heading setting setup
 	$wp_customize->add_setting('site_desc_font_size', array(
-		'default'			=> __( '20', 'khaown'),
+		'default'			=> __( '15', 'khaown'),
 		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
@@ -674,7 +667,7 @@ function khaown_customize_register( $wp_customize ) {
 	// heading Control setup
 	$wp_customize->add_control('site_desc_font_size', array(
 		'type'     => 'number',
-		'label'    => __( 'Site Title Font Size', 'khaown' ),
+		'label'    => __( 'Site Desc Font Size', 'khaown' ),
 		'section'  => 'top_header',
 		'priority' 		=>  20
 	) );

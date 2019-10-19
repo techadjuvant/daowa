@@ -7,7 +7,7 @@
  * @since 1.0.0
  */
 ?>
-<div class="module left">
+<div class="module left site-branding">
 	<?php if ( has_custom_logo() ) { ?>
 		<div class="logo logo-dark"><?php the_custom_logo(); ?></div>
 	<?php } else { ?>

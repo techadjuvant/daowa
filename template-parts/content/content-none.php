@@ -12,7 +12,7 @@
 ?>
 
 <div class="text-left">
-	<h4>Nothing found related to <?php echo get_search_query(); ?></h4>
+	<h4>Nothing found related to your query.</h4>
 	<p>There is no page or post related to this search term. Please search with another term.</p>
 	<h3><a href="<?php echo esc_url( home_url() ); ?>">Go to Homepage</a></h3>
 </div>

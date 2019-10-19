@@ -12,6 +12,9 @@
 /**
  * khaown only works in WordPress 4.7 or later.
  */
+define( 'KHAOWN_THEME_DIR', trailingslashit( get_template_directory() ) );
+
+
 if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 	return;
@@ -348,7 +351,6 @@ class CSS_Menu_Maker_Walker extends Walker {
 }
 
 
-
 /**
  * SVG Icons class.
  */
@@ -379,4 +381,3 @@ require get_template_directory() . '/inc/template-tags.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
-// require get_template_directory(). '/inc/customizer-api.php';

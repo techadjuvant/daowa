@@ -20,7 +20,7 @@
 				</div>
 				<div class="col-md-7 col-xs-12">
 					<header>
-						<h1 class=" mb40 mb-xs-24"><?php the_title(); ?></h1>
+						<h1 class="mb16 mb-xs-24"><?php the_title(); ?></h1>
 					</header>
 					<div class="mb40">
 						<?php the_excerpt(); ?>
@@ -29,7 +29,7 @@
 			<?php } else { ?>
 				<div class="col-xs-12">
 					<header>
-						<h1 class=" mb40 mb-xs-24"><?php the_title(); ?></h1>
+						<h1 class="mb16 mb-xs-24"><?php the_title(); ?></h1>
 					</header>
 					<div class="mb40">
 						<?php the_excerpt(); ?>
