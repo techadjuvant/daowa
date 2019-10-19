@@ -199,6 +199,7 @@ function khaown_custom_colors_css() {
 
 		.site-branding {
 			margin: 0;
+			line-height: inherit;
 		}
 
 		

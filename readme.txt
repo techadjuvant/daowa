@@ -1,15 +1,14 @@
 === khaown ===
 Contributors: motahar1
-Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Tags: Custom Typography, Custom Color, Custom Nav Menu Style, Custom Heading, flexible-header, Parallux effect, Smooth Scroll, custom-logo, featured-images, sidebar-widgets, accessibility-ready, rtl-language-support, sticky-post, threaded-comments, translation-ready
 Requires at least: 4.9.6
-Tested up to: WordPress 5.0
-Requires PHP: 5.2.4
+Tested up to: WordPress 5.2.4
 Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Our khaown theme is designed to show off the power of the block editor.
+Our Khaown theme is designed to show off the power of the WordPress Customizer and block editor.
 
 == Description ==
-Our khaown theme is designed to show off the power of the block editor. It features custom styles for all the default blocks, and is built so that what you see in the editor looks like what you'll see on your website. khaown is designed to be adaptable to a wide range of websites, whether you’re running a photo blog, launching a new business, or supporting a non-profit. Featuring ample whitespace and modern sans-serif headlines paired with classic serif body text, it's built to be beautiful on all screen sizes.
+ Khaown theme is a fully customizable, fast loading, responsive, seo optimised and stunning default designed for blog, portfolio, e-commerce, non-profit, restaurant and a wide range of websites. Everything is customizable. You can change the font-family, font-size, color, background-color and everything. It has the default stunnig design and you can customize everything. It's responsive for mobile and other devices. And the code seo friendly and brwoser compatible.
 
