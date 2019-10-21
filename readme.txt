@@ -3,7 +3,7 @@ Contributors: motahar1
 Tags: Custom Typography, Custom Color, Custom Nav Menu Style, Custom Heading, flexible-header, Parallux effect, Smooth Scroll, custom-logo, featured-images, sidebar-widgets, accessibility-ready, rtl-language-support, sticky-post, threaded-comments, translation-ready
 Requires at least: 4.9.6
 Tested up to: WordPress 5.2.4
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

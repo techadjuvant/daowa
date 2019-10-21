@@ -67,7 +67,7 @@ function khaown_custom_colors_css() {
 	$lightness_selection = apply_filters( "khaown_custom_colors_lightness_selection", 90 );
 	$lightness_selection = absint( $lightness_selection ) . "%";
 
-	$font_Choice = get_theme_mod("default_or_customfont", "");
+	$font_Choice = get_theme_mod("default_or_customfont", "default_font");
 	if( $font_Choice === "default_font") : 
 		
 		$theme_css = " 
@@ -87,15 +87,15 @@ function khaown_custom_colors_css() {
 
 	if( $font_Choice === "custom_font") : 
 		$theme_css = " 
-			@import url('https://fonts.googleapis.com/css?family=" . get_theme_mod("font_family", "") . "&display=swap');
+			@import url('https://fonts.googleapis.com/css?family=" . get_theme_mod("font_family", "Rajdhani") . "&display=swap');
 			body {
-				font-family: " . get_theme_mod("font_family", "") . ";
+				font-family: " . get_theme_mod("font_family", "Rajdhani") . ";
 			}
 			a, a:visited, .widget a {
-				font-family: " . get_theme_mod("font_family", "") . ";
+				font-family: " . get_theme_mod("font_family", "Rajdhani") . ";
 			}
 			h1, h2, h3, h4, h5, h6, p, ul, ol, pre, table, blockquote, input, button, select, textarea, .blog-posts .row p, span, button, .btn {
-				font-family: " . get_theme_mod("font_family", "") . ";
+				font-family: " . get_theme_mod("font_family", "Rajdhani") . ";
 			}
 		"; 
 	endif;
@@ -103,103 +103,111 @@ function khaown_custom_colors_css() {
 	$theme_css .= "
 
 		body {
-			background-color: " . get_theme_mod("bg_color_scheme_1", "") . ";
+			background-color: " . get_theme_mod("bg_color_scheme_1", "#ffffff") . ";
 		}
 		p, .row p, span, button, .btn, .blog-posts .row p {
-			font-size: " . get_theme_mod("paragraph_font_size", "") . "px;
-			font-weight: " . get_theme_mod("paragraph_font_weight", "") . ";
-			font-style: " . get_theme_mod("paragraph_font_style", "") . ";
-			line-height: " . get_theme_mod("paragraph_line_height", "") . "px;
-			letter-spacing: " . get_theme_mod("paragraph_letter_spacing", "") . "px;
-			word-spacing: " . get_theme_mod("paragraph_word_spacing", "") . "px;
-			color: " . get_theme_mod("text_color", "") . ";
+			font-size: " . get_theme_mod("paragraph_font_size", "14") . "px;
+			font-weight: " . get_theme_mod("paragraph_font_weight", "300") . ";
+			font-style: " . get_theme_mod("paragraph_font_style", "normal") . ";
+			text-transform: " . get_theme_mod("paragraph_text_transform", "none") . ";
+			line-height: " . get_theme_mod("paragraph_line_height", "24") . "px;
+			letter-spacing: " . get_theme_mod("paragraph_letter_spacing", "0") . "px;
+			word-spacing: " . get_theme_mod("paragraph_word_spacing", "0") . "px;
+			color: " . get_theme_mod("text_color", "#545454") . ";
 		}
 		a, .widget a {
-			font-size: " . get_theme_mod("paragraph_font_size", "") . "px;
-			font-weight: " . get_theme_mod("paragraph_font_weight", "") . ";
-			color: " . get_theme_mod("link_color", "") . ";
-			font-style: " . get_theme_mod("paragraph_font_style", "") . ";
-			line-height: " . get_theme_mod("paragraph_line_height", "") . "px;
-			letter-spacing: " . get_theme_mod("paragraph_letter_spacing", "") . "px;
-			word-spacing: " . get_theme_mod("paragraph_word_spacing", "") . "px;
+			font-size: " . get_theme_mod("paragraph_font_size", "14") . "px;
+			font-weight: " . get_theme_mod("paragraph_font_weight", "300") . ";
+			color: " . get_theme_mod("link_color", "#545454") . ";
+			font-style: " . get_theme_mod("paragraph_font_style", "normal") . ";
+			line-height: " . get_theme_mod("paragraph_line_height", "24") . "px;
+			letter-spacing: " . get_theme_mod("paragraph_letter_spacing", "0") . "px;
+			word-spacing: " . get_theme_mod("paragraph_word_spacing", "0") . "px;
 		}
 
 		a:hover, a:visited, a:active, .widget a:hover, .post-navigation .nav-links a:hover, .entry .entry-meta a:hover, .entry .entry-footer a:hover {
-			color: " . get_theme_mod("hover_link_color", "") . ";
+			color: " . get_theme_mod("hover_link_color", "#a0a0a0") . ";
 		}
 
 		h1, h2, h3, h4, h5, h6, p, ul, ol, pre, table, blockquote, input, button, select, textarea, .blog-posts .row p, span, button, .btn {
-			font-style: " . get_theme_mod("paragraph_font_style", "") . ";
+			font-style: " . get_theme_mod("paragraph_font_style", "normal") . ";
 		}
 
 		h1, h2, h3, h4, h5, h6 {		
-			font-weight: " . get_theme_mod("heading_1_font_weight", "") . ";
-			letter-spacing: " . get_theme_mod("heading_1_letter_spacing", "") . "px;
-			text-transform: " . get_theme_mod("heading_1_text_case", "") . ";
-			color: " . get_theme_mod("heading_text_color", "") . ";
+			font-weight: " . get_theme_mod("heading_1_font_weight", "300") . ";
+			letter-spacing: " . get_theme_mod("heading_1_letter_spacing", "1") . "px;
+			text-transform: " . get_theme_mod("heading_1_text_case", "uppercase") . ";
+			color: " . get_theme_mod("heading_text_color", "#7a7a7a") . ";
+			word-spacing: " . get_theme_mod("heading_wordspecing_spacing", "0") . "px;
 		}
 		h1 {
-			font-size: " . get_theme_mod("heading_1_font_size", "") . "px;
-			line-height: " . get_theme_mod("heading_1_line_height", "") . "px;
+			font-size: " . get_theme_mod("heading_1_font_size", "28") . "px;
+			line-height: " . get_theme_mod("heading_1_line_height", "36") . "px;
 		}
 		h2, .widget h2.widget-title {
-			font-size: " . get_theme_mod("heading_h2_font_size", "") . "px;
-			line-height: " . get_theme_mod("heading_h2_line_height", "") . "px;
+			font-size: " . get_theme_mod("heading_h2_font_size", "24") . "px;
+			line-height: " . get_theme_mod("heading_h2_line_height", "32") . "px;
 		}
 
 
 		.bg-menu-4 {
-			background-color: " . get_theme_mod("homepage_header_bg_color", "") . ";
+			background-color: " . get_theme_mod("homepage_header_bg_color", "#be9ae2") . ";
 		}
 		.page-title h1.khaown-site-title a {
-			color: " . get_theme_mod("top_header_site_tile_color", "") . ";
-			font-size: " . get_theme_mod("site_title_font_size", "") . "px;
-			font-weight: " . get_theme_mod("site_title_font_weight", "") . ";
-			margin-bottom: " . get_theme_mod("site_title_margin_bottom", "") . "px;
+			color: " . get_theme_mod("top_header_site_tile_color", "#000000") . ";
+			font-size: " . get_theme_mod("site_title_font_size", "32") . "px;
+			font-weight: " . get_theme_mod("site_title_font_weight", "500") . ";
 		  }
 		.page-title h1.khaown-site-title {
-			font-size: " . get_theme_mod("site_title_font_size", "") . "px;
-			font-weight: " . get_theme_mod("site_title_font_weight", "") . ";
-			margin-bottom: " . get_theme_mod("site_title_margin_bottom", "") . "px;
-			color: " . get_theme_mod("top_header_site_tile_color", "") . ";
+			font-size: " . get_theme_mod("site_title_font_size", "32") . "px;
+			font-weight: " . get_theme_mod("site_title_font_weight", "500") . ";
+			margin-bottom: " . get_theme_mod("site_title_margin_bottom", "5") . "px;
+			color: " . get_theme_mod("top_header_site_tile_color", "#000000") . ";
 		}
 		p.khaown-site-description {
-			color: " . get_theme_mod("top_header_site_desc_color", "") . ";
-			font-size: " . get_theme_mod("site_desc_font_size", "") . "px;
+			color: " . get_theme_mod("top_header_site_desc_color", "#5f5f5f") . ";
+			font-size: " . get_theme_mod("site_desc_font_size", "15") . "px;
 		}
 
 		nav, .menu > li ul {
-			background: " . get_theme_mod("nav_bar_bg_color", "") . ";
+			background: " . get_theme_mod("nav_bar_bg_color", "#ffffff") . ";
 		}
 		nav .menu ul li span {
-			color: " . get_theme_mod("nav_bar_text_color", "") . ";
-			font-size: " . get_theme_mod("nav_bar_font_size", "") . "px;
-			font-weight: " . get_theme_mod("nav_bar_font_weight", "") . ";
+			color: " . get_theme_mod("nav_bar_text_color", "#000000") . ";
+			font-size: " . get_theme_mod("nav_bar_font_size", "15") . "px;
+			font-weight: " . get_theme_mod("nav_bar_font_weight", "500") . ";
 		}
 		.menu > li {
-			margin-right: " . get_theme_mod("nav_bar_margin_right", "") . "px;
+			margin-right: " . get_theme_mod("nav_bar_margin_right", "15") . "px;
 		}
 
 
 
 		.blog-posts .row .bg-color-blog-posts {
-			background: " . get_theme_mod("sidebar_background_color", "") . ";
+			background: " . get_theme_mod("sidebar_background_color", "#f8f8f8") . ";
 		}
 		.blog-posts article:nth-child(3n-1) .bg-color-blog-posts {
-			background: " . get_theme_mod("variant_posts_background_color", "") . " !important;
+			background: " . get_theme_mod("veriant_posts_background_color", "#333347") . " !important;
 		}
 		input[type='submit'], button[type='submit'], .em_comment input#submit {
-			border: 0px solid " . get_theme_mod("button_bg_color", "") . ";
+			border: 0px solid " . get_theme_mod("button_bg_color", "#292929") . ";
 			background: " . get_theme_mod("button_bg_color", "") . ";
 		}
 
 		.blog-posts article:nth-child(3n-1) .row p, .blog-posts article:nth-child(3n-1) .row h1 {
-			color: " . get_theme_mod("veriant_posts_text_color", "") . ";
+			color: " . get_theme_mod("veriant_posts_text_color", "#d2d2d2") . ";
 		}
 
 		.site-branding {
 			margin: 0;
 			line-height: inherit;
+		}
+
+		section.restaurant-schedule {
+			background-color: " . get_theme_mod("schedule_bg_color", "#7774B3") . ";
+		}
+		section.restaurant-schedule strong, section.restaurant-schedule span, section.restaurant-schedule h3 {
+			color: " . get_theme_mod("schedule_text_color", "#292929") . ";
 		}
 
 		

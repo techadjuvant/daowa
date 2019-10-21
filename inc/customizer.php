@@ -574,7 +574,7 @@ function khaown_customize_register( $wp_customize ) {
 	// Top header Site Title color
 	$header_topcolors[] = array(
 		'slug'=>'top_header_site_tile_color', 
-		'default' => '#be9ae2',
+		'default' => '#000000',
 		'label' => 'Top Header Site Title Color'
 	);
 	// Top header Site Desc color
@@ -645,7 +645,7 @@ function khaown_customize_register( $wp_customize ) {
 	) );
 	// Heading setting setup
 	$wp_customize->add_setting('site_title_margin_bottom', array(
-		'default'			=> __( '42', 'khaown'),
+		'default'			=> __( '5', 'khaown'),
 		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
