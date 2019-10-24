@@ -672,6 +672,157 @@ function khaown_customize_register( $wp_customize ) {
 		'priority' 		=>  20
 	) );
 
+	/**********************************
+	Social Media Add customizer setup
+    *********************************/
+    $wp_customize->add_section( 'social_media_section', array(
+		'title'          => __( 'Social Accounts', 'khaown' ),
+        'priority' 		 => 41
+	) );
+	
+	// Heading setting setup
+	$wp_customize->add_setting('display_social_media_accounts', array(
+		'default'			=> __( false, 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
+		'type' 				=> 'theme_mod'
+	) );
+	
+	// heading Control setup
+	$wp_customize->add_control('display_social_media_accounts', array(
+		'type'     => 'checkbox',
+		'label'    => __( 'Hide All Social Accounts', 'khaown' ),
+		'section'  => 'social_media_section',
+		'priority' 		=>  20
+	) );
+	// Social media colors
+	$social_media_colors[] = array(
+		'slug'=>'social_media_icon_color', 
+		'default' => '#7774b3',
+		'label' => 'Social Media Icon Color'
+	);
+	$social_media_colors[] = array(
+		'slug'=>'social_media_icon_hover_color', 
+		'default' => '#6f6e86',
+		'label' => 'Social Media Icon Hover Color'
+	);
+	foreach( $social_media_colors as $sm_color ) {
+	
+		// SETTINGS
+		$wp_customize->add_setting(
+			$sm_color['slug'], array(
+				'default' => $sm_color['default'],
+				'sanitize_callback'  => 'esc_attr',
+				'type' => 'theme_mod'
+			)
+		);
+		// CONTROLS
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				$sm_color['slug'], 
+				array('label' => $sm_color['label'], 
+				'section' => 'social_media_section',
+				'priority' 		=>  20,
+				'settings' => $sm_color['slug'])
+			)
+		);
+	}
+	// Font Size of Icon
+	$social_accounts[] = array(
+		'slug'=>'social_icon_font_size', 
+		'default' => 14,
+		'label' => 'Social Icon Font Size',
+		'type' 	=> 'number'
+	);
+	// Social Accounts color
+	$social_accounts[] = array(
+		'slug'=>'social_account_twitter', 
+		'default' 	=> '',
+		'label' 	=> 'Twitter',
+		'type' 		=> 'text'
+	);
+	$social_accounts[] = array(
+		'slug'=>'social_account_facebook', 
+		'default' 	=> '',
+		'label' 	=> 'Facebook',
+		'type' 		=> 'text'
+	);
+	$social_accounts[] = array(
+		'slug'=>'social_account_Instagram', 
+		'default' 	=> '',
+		'label' 	=> 'Instagram',
+		'type' 		=> 'text'
+	);
+	$social_accounts[] = array(
+		'slug'=>'social_account_Pinterest', 
+		'default' 	=> '',
+		'label' 	=> 'Pinterest',
+		'type' 		=> 'text'
+	);
+	$social_accounts[] = array(
+		'slug'=>'social_account_Dribbble', 
+		'default' 	=> '',
+		'label' 	=> 'Dribbble',
+		'type' 		=> 'text'
+	);
+	$social_accounts[] = array(
+		'slug'=>'social_account_LinkedIn', 
+		'default' 	=> '',
+		'label' 	=> 'LinkedIn',
+		'type' 		=> 'text'
+	);
+	$social_accounts[] = array(
+		'slug'=>'social_account_Tumblr', 
+		'default' 	=> '',
+		'label' 	=> 'Tumblr',
+		'type' 		=> 'text'
+	);
+	$social_accounts[] = array(
+		'slug'=>'social_account_Youtube', 
+		'default' 	=> '',
+		'label' 	=> 'Youtube',
+		'type' 		=> 'text'
+	);
+	$social_accounts[] = array(
+		'slug'=>'social_account_Vimeo', 
+		'default' 	=> '',
+		'label' 	=> 'Vimeo',
+		'type' 		=> 'text'
+	);
+	$social_accounts[] = array(
+		'slug'=>'social_account_RSS', 
+		'default' 	=> '',
+		'label' 	=> 'RSS',
+		'type' 		=> 'text'
+	);
+	$social_accounts[] = array(
+		'slug'=>'social_account_Email', 
+		'default' 	=> '',
+		'label' 	=> 'Email',
+		'type' 		=> 'text'
+	);
+	foreach( $social_accounts as $account ) {
+	
+		// SETTINGS
+		$wp_customize->add_setting(
+			$account['slug'], array(
+				'default' => $account['default'],
+				'sanitize_callback'  => 'esc_attr',
+				'type' => 'theme_mod'
+			)
+		);
+		// CONTROLS
+		$wp_customize->add_control(
+				$account['slug'], 
+				array('label' => $account['label'], 
+				'section' => 'social_media_section',
+				'type' 	=> $account['type'], 
+				'priority' 		=>  20,
+				'settings' => $account['slug'])
+		);
+	}
+
+
 
 	
 }
