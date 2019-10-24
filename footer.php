@@ -11,7 +11,7 @@
  * @since 1.0.0
  */
 ?>
-<footer id="colophon" class="site-footer">
+<footer id="footer" class="site-footer container">
 	<div class="row">
 		<div class="col-md-4">
 			<div class="site-info">
@@ -30,7 +30,7 @@
 					the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
 				}
 				?>
-				<h4>
+				<div class="social-accounts">
 					<?php if(get_theme_mod("social_account_twitter", "")) { ?>
 						<a target="_blank" href="<?php echo get_theme_mod("social_account_twitter", ""); ?>"><i class="ti-twitter-alt"></i></a> 
 					<?php } ?>
@@ -64,7 +64,7 @@
 					<?php if(get_theme_mod("social_account_Email", "")) { ?>
 					<a target="_blank" href="<?php echo get_theme_mod("social_account_Email", ""); ?>"><i class="ti-email"></i></a>
 					<?php } ?>
-				</h4>
+				</div>
 		</div><!-- .site-info -->
 		</div>
 		<div class="col-md-8">

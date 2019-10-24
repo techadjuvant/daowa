@@ -697,12 +697,12 @@ function khaown_customize_register( $wp_customize ) {
 	// Social media colors
 	$social_media_colors[] = array(
 		'slug'=>'social_media_icon_color', 
-		'default' => '#7774b3',
+		'default' => '#a0a0a0',
 		'label' => 'Social Media Icon Color'
 	);
 	$social_media_colors[] = array(
 		'slug'=>'social_media_icon_hover_color', 
-		'default' => '#6f6e86',
+		'default' => '#0073aa',
 		'label' => 'Social Media Icon Hover Color'
 	);
 	foreach( $social_media_colors as $sm_color ) {

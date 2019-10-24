@@ -202,6 +202,13 @@ function khaown_custom_colors_css() {
 			margin: 0;
 			line-height: inherit;
 		}
+		.social-accounts a {
+			color: " . get_theme_mod("social_media_icon_color", "#a0a0a0") . ";
+			font-size: " . get_theme_mod("social_icon_font_size", "14") . "px;
+		}
+		.social-accounts a:hover {
+			color: " . get_theme_mod("social_media_icon_hover_color", "#0073aa") . ";
+		}
 
 		section.restaurant-schedule {
 			background-color: " . get_theme_mod("schedule_bg_color", "#7774B3") . ";
