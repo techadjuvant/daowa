@@ -203,7 +203,7 @@ function khaown_customize_register( $wp_customize ) {
 	}
 
 	/**************************************
-	 * Sidebar Layout Section setup
+	 * Sidebar Layout setup
 	**************************************/
 	$wp_customize->add_panel('sidebar_layout_panel', array(
         'theme_supports' => '',
@@ -465,10 +465,17 @@ function khaown_customize_register( $wp_customize ) {
 	/**********************************
 		Heading Section setup
 	*********************************/
-	$wp_customize->add_section('heading', array(
-		'title'			=> __('Heading', 'khaown'),
-		'description'	=> sprintf(__('Setup your theme heading', 'khaown') ),
+
+	$wp_customize->add_panel('heading_customization_panel', array(
+        'theme_supports' => '',
+		'title'			=> __('Headings', 'khaown'),
+		'description'	=> sprintf(__('Customize your theme headings', 'khaown') ),
 		'priority' 		=> 44
+    ) );
+
+	$wp_customize->add_section('heading_general', array(
+		'title'			=> __('General', 'khaown'),
+		'panel'          => 'heading_customization_panel'
 	) );
 
 	// Heading setting setup
@@ -488,7 +495,7 @@ function khaown_customize_register( $wp_customize ) {
 			'lowercase'  => _x( 'Lowercase', 'lowercase', 'khaown' ),
 			'capitalize'  => _x( 'Capitalize', 'capitalize', 'khaown' ),
 		),
-		'section'  => 'heading',
+		'section'  => 'heading_general',
 		'priority' 		=>  20
 	) );
 
@@ -505,7 +512,7 @@ function khaown_customize_register( $wp_customize ) {
 			'heading_text_color', 
 			array(
 				'label'			=> __('Heading Text Color', 'khaown'),
-				'section' 		=> 'heading',
+				'section' 		=> 'heading_general',
 				'priority' 		=>  20
 			)
 		)
@@ -520,7 +527,7 @@ function khaown_customize_register( $wp_customize ) {
 	// heading Control setup
 	$wp_customize->add_control('heading_1_letter_spacing', array(
 		'label'			=> __('Heading Letter Spacing', 'khaown'),
-		'section' 		=> 'heading',
+		'section' 		=> 'heading_general',
 		'type'			=> 'number',
 		'priority' 		=>  20
 	) );
@@ -535,7 +542,7 @@ function khaown_customize_register( $wp_customize ) {
 	// heading Control setup
 	$wp_customize->add_control('heading_wordspecing_spacing', array(
 		'label'			=> __('Heading Word Spacing', 'khaown'),
-		'section' 		=> 'heading',
+		'section' 		=> 'heading_general',
 		'type'			=> 'number',
 		'priority' 		=>  20
 	) );
@@ -561,9 +568,15 @@ function khaown_customize_register( $wp_customize ) {
 			'600'  => _x( '600', '600', 'khaown' ),
 			'700'  => _x( '700', '700', 'khaown' ),
 		),
-		'section'  => 'heading',
+		'section'  => 'heading_general',
 		'priority' 		=>  20
 	) );
+
+	$wp_customize->add_section('heading_h1_customization', array(
+		'title'			=> __('H1 Heading', 'khaown'),
+		'panel'          => 'heading_customization_panel',
+	) );
+
 	// Heading setting setup
 	$wp_customize->add_setting('heading_1_font_size', array(
 		'default'			=> __('28', 'khaown'),
@@ -574,7 +587,7 @@ function khaown_customize_register( $wp_customize ) {
 	// heading Control setup
 	$wp_customize->add_control('heading_1_font_size', array(
 		'label'			=> __('H1 Font Size', 'khaown'),
-		'section' 		=> 'heading',
+		'section' 		=> 'heading_h1_customization',
 		'type'			=> 'number',
 		'priority' 		=>  20
 	) );
@@ -589,8 +602,12 @@ function khaown_customize_register( $wp_customize ) {
 	$wp_customize->add_control('heading_1_line_height', array(
 		'type'     => 'number',
 		'label'    => __( 'H1 Line Height', 'khaown' ),
-		'section'  => 'heading',
+		'section'  => 'heading_h1_customization',
 		'priority' 		=>  20
+	) );
+	$wp_customize->add_section('heading_h2_customization', array(
+		'title'			=> __('H2 Heading', 'khaown'),
+		'panel'          => 'heading_customization_panel',
 	) );
 	// Heading setting setup
 	$wp_customize->add_setting('heading_h2_font_size', array(
@@ -602,10 +619,11 @@ function khaown_customize_register( $wp_customize ) {
 	// heading Control setup
 	$wp_customize->add_control('heading_h2_font_size', array(
 		'label'			=> __('H2 Font Size', 'khaown'),
-		'section' 		=> 'heading',
+		'section' 		=> 'heading_h2_customization',
 		'type'			=> 'number',
 		'priority' 		=>  20
 	) );
+	
 	// Heading setting setup
 	$wp_customize->add_setting('heading_h2_line_height', array(
 		'default'			=> __( '32', 'khaown'),
@@ -617,7 +635,7 @@ function khaown_customize_register( $wp_customize ) {
 	$wp_customize->add_control('heading_h2_line_height', array(
 		'type'     => 'number',
 		'label'    => __( 'H2 Line Height', 'khaown' ),
-		'section'  => 'heading',
+		'section'  => 'heading_h2_customization',
 		'priority' 		=>  20
 	) );
 
