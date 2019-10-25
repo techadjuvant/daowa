@@ -73,27 +73,6 @@ function khaown_customize_register( $wp_customize ) {
 		'label' => 'Link Color (on hover)'
 	);
 
-	// secondary color ( site description, sidebar headings, h3, h5, nav links on hover )
-	$bgcolors[] = array(
-		'slug'=>'sidebar_background_color', 
-		'default' => '#f8f8f8',
-		'label' => 'Sidebar & Posts Background Color'
-	);
-
-	// secondary color ( site description, sidebar headings, h3, h5, nav links on hover )
-	$bgcolors[] = array(
-		'slug'=> 'veriant_posts_background_color', 
-		'default' => '#333347',
-		'label' => 'Veriant Posts Background Color'
-	);
-	
-	// secondary color ( site description, sidebar headings, h3, h5, nav links on hover )
-	$bgcolors[] = array(
-		'slug'=> 'veriant_posts_text_color', 
-		'default' => '#d2d2d2',
-		'label' => 'Veriant Posts Text Color'
-	);
-
 	foreach( $bgcolors as $txtcolor ) {
 	
 		// SETTINGS
@@ -116,8 +95,117 @@ function khaown_customize_register( $wp_customize ) {
 		);
 	}
 
+	/**************************************
+	 * // Layout Design Section setup
+	**************************************/
+	
+	$wp_customize->add_section('layout_design', array(
+		'title'			=> __('Layout', 'khaown'),
+		'description'	=> sprintf(__('Customize your layout desing', 'khaown') ),
+		'priority' 		=> 41
+	) );
 
-	// Typography Section setup
+	// flat_or_deep_design setting setup
+	$wp_customize->add_setting('flat_or_deep_design', array(
+		'default'			=> __('flat_design', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
+		'type' 				=> 'theme_mod'
+	) );
+	
+	// flat_or_deep_design Control setup
+	$wp_customize->add_control('flat_or_deep_design', array(
+		'label'			=> __('Choose Design Type', 'khaown'),
+		'type'			=> 'radio',
+		'choices'   => array(
+			'flat_design' => __( 'Flat Design', 'khaown' ),
+			'deep_design' => __( 'Deep Design', 'khaown' )
+		),
+		'section' 		=> 'layout_design',
+		'priority' 		=>  20
+	) );
+	// Border setting setup
+	$wp_customize->add_setting('border_design', array(
+		'default'			=> __('border_none', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
+		'type' 				=> 'theme_mod'
+	) );
+	
+	// Border Control setup
+	$wp_customize->add_control('border_design', array(
+		'label'			=> __('Box Border', 'khaown'),
+		'type'			=> 'radio',
+		'choices'   => array(
+			'has_border' => __( 'Has Border', 'khaown' ),
+			'border_none' => __( 'Border None', 'khaown' )
+		),
+		'section' 		=> 'layout_design',
+		'priority' 		=>  20
+	) );
+
+	// Border Radius setting setup
+	$wp_customize->add_setting('border_radius', array(
+		'default'			=> __( 0, 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
+		'type' 				=> 'theme_mod'
+	) );
+	
+	// Border Radius Control setup
+	$wp_customize->add_control('border_radius', array(
+		'label'			=> __('Border Radius', 'khaown'),
+		'type'			=> 'number',
+		'section' 		=> 'layout_design',
+		'priority' 		=>  20
+	) );
+
+	// secondary color ( site description, sidebar headings, h3, h5, nav links on hover )
+	$index_bgcolors[] = array(
+		'slug'=>'sidebar_background_color', 
+		'default' => '#f8f8f8',
+		'label' => 'Sidebar & Posts Background Color'
+	);
+
+	// secondary color ( site description, sidebar headings, h3, h5, nav links on hover )
+	$index_bgcolors[] = array(
+		'slug'=> 'veriant_posts_background_color', 
+		'default' => '#333347',
+		'label' => 'Veriant Posts Background Color'
+	);
+	
+	// secondary color ( site description, sidebar headings, h3, h5, nav links on hover )
+	$index_bgcolors[] = array(
+		'slug'=> 'veriant_posts_text_color', 
+		'default' => '#d2d2d2',
+		'label' => 'Veriant Posts Text Color'
+	);
+
+	foreach( $index_bgcolors as $index_bg_color ) {
+	
+		// SETTINGS
+		$wp_customize->add_setting(
+			$index_bg_color['slug'], array(
+				'default' => $index_bg_color['default'],
+				'type' => 'theme_mod',
+				'sanitize_callback'  => 'esc_attr'
+			)
+		);
+		// CONTROLS
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				$index_bg_color['slug'], 
+				array('label' => $index_bg_color['label'], 
+				'section' => 'layout_design',
+				'priority' 		=>  20,
+				'settings' => $index_bg_color['slug']),
+				
+			)
+		);
+	}
+
+	/**************************************
+	 * // Typography Section setup
+	**************************************/
+	
 	$wp_customize->add_section('typography', array(
 		'title'			=> __('Typography', 'khaown'),
 		'description'	=> sprintf(__('Setup your theme typography', 'khaown') ),

@@ -68,6 +68,11 @@ function khaown_custom_colors_css() {
 	$lightness_selection = absint( $lightness_selection ) . "%";
 
 	$font_Choice = get_theme_mod("default_or_customfont", "default_font");
+
+	$flat_or_deep_design = get_theme_mod("flat_or_deep_design", "flat_design");
+
+	$border_design = get_theme_mod("border_design", "border_none");
+
 	if( $font_Choice === "default_font") : 
 		
 		$theme_css = " 
@@ -98,6 +103,55 @@ function khaown_custom_colors_css() {
 				font-family: " . get_theme_mod("font_family", "Rajdhani") . ";
 			}
 		"; 
+	endif;
+
+	if( $flat_or_deep_design === "flat_design") : 
+		
+		$theme_css .= " 
+	
+		.blog-posts .row .bg-color-blog-posts {
+			background: " . get_theme_mod("sidebar_background_color", "#f8f8f8") . ";
+			border-radius: 0px;
+			box-shadow: 0;
+		}
+	";
+	endif;
+
+	if( $flat_or_deep_design === "deep_design") : 
+		
+		$theme_css .= " 
+	
+		.blog-posts .row .bg-color-blog-posts {
+			background: #ffffff;
+			border-radius: 5px;
+			transition: all .4s;
+			box-shadow: 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
+		}
+		.blog-posts .row .bg-color-blog-posts:hover {
+			box-shadow: 0 3px 3px 1px rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 1px 8px 0 rgba(0,0,0,.12);
+			transition: all .4s;
+		}
+	";
+	endif;
+
+	if( $border_design === "has_border") : 
+		
+		$theme_css .= " 
+		.feature.bordered {
+			padding: 32px;
+			border: 1px solid #ccc;
+		}
+	";
+	endif;
+
+	if( $border_design === "border_none") : 
+		
+		$theme_css .= " 
+		.feature.bordered {
+			padding: 32px;
+			border: 0;
+		}
+	";
 	endif;
 
 	$theme_css .= "
@@ -149,6 +203,12 @@ function khaown_custom_colors_css() {
 			line-height: " . get_theme_mod("heading_h2_line_height", "32") . "px;
 		}
 
+		.blog-posts .row .bg-color-blog-posts {
+			border-radius: " . get_theme_mod("border_radius", "0") . "px;
+			background: " . get_theme_mod("sidebar_background_color", "#f8f8f8") . ";
+		}
+
+
 
 		.bg-menu-4 {
 			background-color: " . get_theme_mod("homepage_header_bg_color", "#be9ae2") . ";
@@ -183,9 +243,7 @@ function khaown_custom_colors_css() {
 
 
 
-		.blog-posts .row .bg-color-blog-posts {
-			background: " . get_theme_mod("sidebar_background_color", "#f8f8f8") . ";
-		}
+		
 		.blog-posts article:nth-child(3n-1) .bg-color-blog-posts {
 			background: " . get_theme_mod("veriant_posts_background_color", "#333347") . " !important;
 		}
