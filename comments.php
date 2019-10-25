@@ -21,8 +21,7 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
-
-<h2><i class="ti ti-comments"></i>Comments</h2>
+<?php get_template_part( 'template-parts/post/discussion', 'meta' );?>
 <?php $args = array(
 	'walker'            => null,
 	'max_depth'         => '',
@@ -38,10 +37,23 @@ if ( post_password_required() ) {
 	'reverse_children'  => '',
 	'format'            => 'html5', // or 'xhtml' if no 'HTML5' theme support
 	'short_ping'        => false,   // @since 3.6
-        'echo'              => true     // boolean, default is true
+    'echo'              => true     // boolean, default is true
 ); ?>
 <?php wp_list_comments($args, $comments); ?>
-
+<?php 
+	// Show comment navigation
+	if ( have_comments() ) :
+		$prev_icon     = khaown_get_icon_svg( 'chevron_left', 22 );
+		$next_icon     = khaown_get_icon_svg( 'chevron_right', 22 );
+		$comments_text = __( 'Comments', 'khaown' );
+		the_comments_navigation(
+			array(
+				'prev_text' => sprintf( '%s <span class="nav-prev-text"><span class="primary-text">%s</span> <span class="secondary-text">%s</span></span>', $prev_icon, __( 'Previous', 'khaown' ), __( 'Comments', 'khaown' ) ),
+				'next_text' => sprintf( '<span class="nav-next-text"><span class="primary-text">%s</span> <span class="secondary-text">%s</span></span> %s', __( 'Next', 'khaown' ), __( 'Comments', 'khaown' ), $next_icon ),
+			)
+		);
+	endif;
+?>
 <?php
 $form_args = array(
         // change the title of send button 
@@ -64,6 +76,6 @@ $form_args = array(
 
         <?php endif ?>
 
-<?php
-//comment_form($form_args);
+<?php 
+
 

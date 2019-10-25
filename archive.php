@@ -39,8 +39,8 @@ get_header();
             <div class="blog-posts em-site-content">
 				<div class="row">
 					<?php 
-						$archive_page_sidebar_position = get_theme_mod("archive_page_sidebar_position", "no_sidebar"); 
-						if($archive_page_sidebar_position === "right_sidebar") : 
+						$archive_page_sidebar_position = get_theme_mod("archive_page_sidebar_position", "no-sidebar"); 
+						if($archive_page_sidebar_position === "right-sidebar") : 
 					?>
 						<div class="col-md-9 col-xs-12">
 							<main id="khaown-main" class="khaown-site-main pd-right-32">
@@ -61,12 +61,12 @@ get_header();
 							</main><!-- .site-main -->
 						</div>
 						<div class="col-md-3 col-xs-12 text-center feature bordered bg-color-blog-posts">
-							<?php dynamic_sidebar( 'sidebar-1' ); ?>                    
+							<?php get_sidebar(); ?>                   
 						</div>
 					<?php endif; ?>
-					<?php if($archive_page_sidebar_position === "left_sidebar") : ?>
+					<?php if($archive_page_sidebar_position === "left-sidebar") : ?>
 						<div class="col-md-3 col-xs-12 text-center feature bordered bg-color-blog-posts">
-							<?php dynamic_sidebar( 'sidebar-1' ); ?>                    
+							<?php get_sidebar(); ?>                     
 						</div>
 						<div class="col-md-9 col-xs-12">
 							<main id="khaown-main" class="khaown-site-main pd-left-32">
@@ -87,7 +87,7 @@ get_header();
 							</main><!-- .site-main -->
 						</div>
 					<?php endif; ?>
-					<?php if($archive_page_sidebar_position === "no_sidebar") : ?>
+					<?php if($archive_page_sidebar_position === "no-sidebar") : ?>
 						<div class="col-md-10 col-md-offset-1 col-xs-12">
 							<main id="khaown-main" class="khaown-site-main">
 								<?php

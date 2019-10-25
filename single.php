@@ -60,7 +60,7 @@ get_header();
 
 								<!-- If comments are open or we have at least one comment, load up the comment template. -->
 								<?php if ( comments_open() || get_comments_number() ) { ?>
-									<div class="comm em_comment mb-80">
+									<div id="comments" class="comm em_comment mb-80">
 										<?php comments_template(); ?>
 										<?php if ( is_singular() ) wp_enqueue_script( "comment-reply" ); ?>
 										<?php paginate_comments_links( ) ?>

@@ -144,7 +144,7 @@ function khaown_customize_register( $wp_customize ) {
 
 	// Border Radius setting setup
 	$wp_customize->add_setting('border_radius', array(
-		'default'			=> __( 0, 'khaown'),
+		'default'			=> __( '0', 'khaown'),
 		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
@@ -220,7 +220,7 @@ function khaown_customize_register( $wp_customize ) {
 
 	// Blog page sidebar setting setup
 	$wp_customize->add_setting('blog_page_sidebar_position', array(
-		'default'			=> __('right_sidebar', 'khaown'),
+		'default'			=> __('right-sidebar', 'khaown'),
 		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
@@ -231,9 +231,9 @@ function khaown_customize_register( $wp_customize ) {
 		'section' 		=> 'blogpage_sidebar_layout',
 		'type'			=> 'select',
 		'choices'  => array(
-			'no_sidebar' => _x( 'No Sidebar', 'no_sidebar', 'khaown' ),
-			'left_sidebar' => _x( 'Left Sidebar', 'left_sidebar', 'khaown' ),
-			'right_sidebar' => _x( 'Right Sidebar', 'right_sidebar', 'khaown' ),
+			'no-sidebar' => _x( 'No Sidebar', 'no-sidebar', 'khaown' ),
+			'left-sidebar' => _x( 'Left Sidebar', 'left-sidebar', 'khaown' ),
+			'right-sidebar' => _x( 'Right Sidebar', 'right-sidebar', 'khaown' ),
 		),
 		'priority' 		=>  20
 	) );
@@ -247,7 +247,7 @@ function khaown_customize_register( $wp_customize ) {
 
 	// Search page sidebar setting setup
 	$wp_customize->add_setting('search_page_sidebar_position', array(
-		'default'			=> __('no_sidebar', 'khaown'),
+		'default'			=> __('no-sidebar', 'khaown'),
 		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
@@ -258,9 +258,9 @@ function khaown_customize_register( $wp_customize ) {
 		'section' 		=> 'search_page_sidebar_layout',
 		'type'			=> 'select',
 		'choices'  => array(
-			'no_sidebar' => _x( 'No Sidebar', 'no_sidebar', 'khaown' ),
-			'left_sidebar' => _x( 'Left Sidebar', 'left_sidebar', 'khaown' ),
-			'right_sidebar' => _x( 'Right Sidebar', 'right_sidebar', 'khaown' ),
+			'no-sidebar' => _x( 'No Sidebar', 'no-sidebar', 'khaown' ),
+			'left-sidebar' => _x( 'Left Sidebar', 'left-sidebar', 'khaown' ),
+			'right-sidebar' => _x( 'Right Sidebar', 'right-sidebar', 'khaown' ),
 		),
 		'priority' 		=>  20
 	) );
@@ -274,7 +274,7 @@ function khaown_customize_register( $wp_customize ) {
 
 	// archive page sidebar setting setup
 	$wp_customize->add_setting('archive_page_sidebar_position', array(
-		'default'			=> __('no_sidebar', 'khaown'),
+		'default'			=> __('no-sidebar', 'khaown'),
 		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );
@@ -285,9 +285,9 @@ function khaown_customize_register( $wp_customize ) {
 		'section' 		=> 'archive_page_sidebar_layout',
 		'type'			=> 'select',
 		'choices'  => array(
-			'no_sidebar' => _x( 'No Sidebar', 'no_sidebar', 'khaown' ),
-			'left_sidebar' => _x( 'Left Sidebar', 'left_sidebar', 'khaown' ),
-			'right_sidebar' => _x( 'Right Sidebar', 'right_sidebar', 'khaown' ),
+			'no-sidebar' => _x( 'No Sidebar', 'no-sidebar', 'khaown' ),
+			'left-sidebar' => _x( 'Left Sidebar', 'left-sidebar', 'khaown' ),
+			'right-sidebar' => _x( 'Right Sidebar', 'right-sidebar', 'khaown' ),
 		),
 		'priority' 		=>  20
 	) );
@@ -877,7 +877,7 @@ function khaown_customize_register( $wp_customize ) {
 	
 	// Heading setting setup
 	$wp_customize->add_setting('display_social_media_accounts', array(
-		'default'			=> __( false, 'khaown'),
+		'default'			=> __( 'false', 'khaown'),
 		'sanitize_callback'  => 'esc_attr',
 		'type' 				=> 'theme_mod'
 	) );

@@ -19,14 +19,14 @@ if ( $has_responses ) {
 }
 ?>
 
-<div class="discussion-meta">
+<h2 class="discussion-meta">
 	<?php
 	if ( $has_responses ) {
 		khaown_discussion_avatars_list( $discussion->authors );
 	}
 	?>
-	<p class="discussion-meta-info">
-		<?php echo khaown_get_icon_svg( 'comment', 24 ); ?>
-		<span><?php echo esc_html( $meta_label ); ?></span>
-	</p>
-</div><!-- .discussion-meta -->
+	<div class="discussion-meta-info">
+		<i class="ti ti-comments"></i>
+		<?php echo esc_html( $meta_label ); ?>
+</h2>
+
