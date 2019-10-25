@@ -15,21 +15,14 @@
 	<div class="row">
 		<div class="col-md-4">
 			<div class="site-info">
-				<?php $blog_info = get_bloginfo( 'name' ); ?>
-				<?php if ( ! empty( $blog_info ) ) : ?>
-					<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,
-				<?php endif; ?>
-				<a target="_blank" href="<?php echo esc_url( __( 'http://e-motahar.com', 'khaown' ) ); ?>" class="imprint">
-					<?php
-					/* translators: %s: WordPress. */
-					printf( __( 'Proudly powered by %s.', 'khaown' ), 'Motahar' );
-					?>
-				</a>
-				<?php
-				if ( function_exists( 'the_privacy_policy_link' ) ) {
-					the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
-				}
-				?>
+					<?php if ( has_custom_logo() ) { ?>
+						<div class="logo logo-dark"><?php the_custom_logo(); ?></div>
+					<?php } else { ?>
+						<?php $blog_info = get_bloginfo( 'name' ); ?>
+						<?php if ( ! empty( $blog_info ) ) : ?>
+							<h1 class="site-title khaown-site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php endif; ?>
+					<?php } ?>
 				<div class="social-accounts">
 					<?php if(get_theme_mod("social_account_twitter", "")) { ?>
 						<a target="_blank" href="<?php echo get_theme_mod("social_account_twitter", ""); ?>"><i class="ti-twitter-alt"></i></a> 

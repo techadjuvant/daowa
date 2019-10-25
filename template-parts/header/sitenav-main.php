@@ -9,7 +9,7 @@
             wp_nav_menu(
                 array(  
                     'theme_location' => 'menu-1',
-                    'menu' => 'Main Navigation', 
+                    'menu' => 'Main Navigation',
                     'container_id' => 'khaown-main-menu', 
                     'walker' => new CSS_Menu_Maker_Walker()
                 )

@@ -21,14 +21,14 @@ function khaown_customize_register( $wp_customize ) {
 		$wp_customize->selective_refresh->add_partial(
 			'blogname',
 			array(
-				'selector'        => '.site-title a',
+				'selector'        => '.khaown-site-title',
 				'render_callback' => 'khaown_customize_partial_blogname',
 			)
 		);
 		$wp_customize->selective_refresh->add_partial(
 			'blogdescription',
 			array(
-				'selector'        => '.site-description',
+				'selector'        => '.khaown-site-description',
 				'render_callback' => 'khaown_customize_partial_blogdescription',
 			)
 		);
