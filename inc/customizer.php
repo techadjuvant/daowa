@@ -227,8 +227,62 @@ function khaown_customize_register( $wp_customize ) {
 	
 	// Blog page sidebar Control setup
 	$wp_customize->add_control('blog_page_sidebar_position', array(
-		'label'			=> __('Blog Page Sidebar', 'khaown'),
+		'label'			=> __('Sidebar', 'khaown'),
 		'section' 		=> 'blogpage_sidebar_layout',
+		'type'			=> 'select',
+		'choices'  => array(
+			'no_sidebar' => _x( 'No Sidebar', 'no_sidebar', 'khaown' ),
+			'left_sidebar' => _x( 'Left Sidebar', 'left_sidebar', 'khaown' ),
+			'right_sidebar' => _x( 'Right Sidebar', 'right_sidebar', 'khaown' ),
+		),
+		'priority' 		=>  20
+	) );
+
+	// Section search page sidebar
+	$wp_customize->add_section('search_page_sidebar_layout', array(
+		'title'			=> __('Search Page Sidebar', 'khaown'),
+		'panel'          => 'sidebar_layout_panel',
+		'priority' 		=> 41
+	) );
+
+	// Search page sidebar setting setup
+	$wp_customize->add_setting('search_page_sidebar_position', array(
+		'default'			=> __('no_sidebar', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
+		'type' 				=> 'theme_mod'
+	) );
+	
+	// Search page sidebar Control setup
+	$wp_customize->add_control('search_page_sidebar_position', array(
+		'label'			=> __('Sidebar', 'khaown'),
+		'section' 		=> 'search_page_sidebar_layout',
+		'type'			=> 'select',
+		'choices'  => array(
+			'no_sidebar' => _x( 'No Sidebar', 'no_sidebar', 'khaown' ),
+			'left_sidebar' => _x( 'Left Sidebar', 'left_sidebar', 'khaown' ),
+			'right_sidebar' => _x( 'Right Sidebar', 'right_sidebar', 'khaown' ),
+		),
+		'priority' 		=>  20
+	) );
+
+	// Section archive page sidebar
+	$wp_customize->add_section('archive_page_sidebar_layout', array(
+		'title'			=> __('Archive Page Sidebar', 'khaown'),
+		'panel'          => 'sidebar_layout_panel',
+		'priority' 		=> 41
+	) );
+
+	// archive page sidebar setting setup
+	$wp_customize->add_setting('archive_page_sidebar_position', array(
+		'default'			=> __('no_sidebar', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
+		'type' 				=> 'theme_mod'
+	) );
+	
+	// archive page sidebar Control setup
+	$wp_customize->add_control('archive_page_sidebar_position', array(
+		'label'			=> __('Sidebar', 'khaown'),
+		'section' 		=> 'archive_page_sidebar_layout',
 		'type'			=> 'select',
 		'choices'  => array(
 			'no_sidebar' => _x( 'No Sidebar', 'no_sidebar', 'khaown' ),
