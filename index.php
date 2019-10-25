@@ -59,27 +59,75 @@ get_header();
         <div class="container">
             <div class="blog-posts em-site-content">
                 <div class="row">
-                    <div class="col-md-9 col-xs-12">
-						<main id="khaown-main" class="khaown-site-main">
-							<?php
-								if ( have_posts() ) {
-									// Load posts loop.
-									while ( have_posts() ) {
-										the_post();
-										get_template_part( 'template-parts/content/content', 'excerpt');
+					<?php 
+						$sidebar_position = get_theme_mod("blog_page_sidebar_position", "right_sidebar"); 
+						if($sidebar_position === "right_sidebar") : 
+					?>
+						<div class="col-md-9 col-xs-12">
+							<main id="khaown-main" class="khaown-site-main pd-right-32">
+								<?php
+									if ( have_posts() ) {
+										// Load posts loop.
+										while ( have_posts() ) {
+											the_post();
+											get_template_part( 'template-parts/content/content', 'excerpt');
+										}
+										// Previous/next page navigation.
+										khaown_the_posts_navigation();
+									} else {
+										// If no content, include the "No posts found" template.
+										get_template_part( 'template-parts/content/content', 'none' );
 									}
-									// Previous/next page navigation.
-									khaown_the_posts_navigation();
-								} else {
-									// If no content, include the "No posts found" template.
-									get_template_part( 'template-parts/content/content', 'none' );
-								}
-							?>
-						</main><!-- .site-main -->
-					</div>
-					<div class="col-md-3 col-xs-12 text-center feature bordered bg-color-blog-posts">
-						<?php dynamic_sidebar( 'sidebar-1' ); ?>                    
-					</div>
+								?>
+							</main><!-- .site-main -->
+						</div>
+						<div class="col-md-3 col-xs-12 text-center feature bordered bg-color-blog-posts">
+							<?php dynamic_sidebar( 'sidebar-1' ); ?>                    
+						</div>
+					<?php endif; ?>
+					<?php if($sidebar_position === "left_sidebar") : ?>
+						<div class="col-md-3 col-xs-12 text-center feature bordered bg-color-blog-posts">
+							<?php dynamic_sidebar( 'sidebar-1' ); ?>                    
+						</div>
+						<div class="col-md-9 col-xs-12">
+							<main id="khaown-main" class="khaown-site-main pd-left-32">
+								<?php
+									if ( have_posts() ) {
+										// Load posts loop.
+										while ( have_posts() ) {
+											the_post();
+											get_template_part( 'template-parts/content/content', 'excerpt');
+										}
+										// Previous/next page navigation.
+										khaown_the_posts_navigation();
+									} else {
+										// If no content, include the "No posts found" template.
+										get_template_part( 'template-parts/content/content', 'none' );
+									}
+								?>
+							</main><!-- .site-main -->
+						</div>
+					<?php endif; ?>
+					<?php if($sidebar_position === "no_sidebar") : ?>
+						<div class="col-md-10 col-md-offset-1 col-xs-12">
+							<main id="khaown-main" class="khaown-site-main">
+								<?php
+									if ( have_posts() ) {
+										// Load posts loop.
+										while ( have_posts() ) {
+											the_post();
+											get_template_part( 'template-parts/content/content', 'excerpt');
+										}
+										// Previous/next page navigation.
+										khaown_the_posts_navigation();
+									} else {
+										// If no content, include the "No posts found" template.
+										get_template_part( 'template-parts/content/content', 'none' );
+									}
+								?>
+							</main><!-- .site-main -->
+						</div>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>

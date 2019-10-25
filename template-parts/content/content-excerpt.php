@@ -13,12 +13,12 @@
 	<div  class="row text-left feature bordered bg-color-blog-posts">
 		<a id="post-<?php the_ID(); ?>" <?php post_class(); ?> href="<?php the_permalink(); ?>">
 			<?php if ( has_post_thumbnail() ) { ?>
-				<div class="col-md-5 col-xs-12">
+				<div class="col-md-4 col-xs-12">
 					<div class="blog-posts-image-holder">
 						<?php the_post_thumbnail(); ?>
 					</div>
 				</div>
-				<div class="col-md-7 col-xs-12">
+				<div class="col-md-8 col-xs-12">
 					<header>
 						<h1 class="mb16 mb-xs-24"><?php the_title(); ?></h1>
 					</header>

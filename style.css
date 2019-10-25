@@ -20718,6 +20718,14 @@ a img.aligncenter {
   height: auto; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/khaown\/_theme-khaown\.scss}line{font-family:\000036000}}
+.pd-right-32 {
+  padding-right: 32px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/khaown\/_theme-khaown\.scss}line{font-family:\000036003}}
+.pd-left-32 {
+  padding-left: 32px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/khaown\/_theme-khaown\.scss}line{font-family:\000036006}}
 .sticky {
   background-color: #eee0; }
 
@@ -22842,19 +22850,15 @@ h1.khaown-site-title, .khaown-site-description {
   height: 40px;
   background: #fefefe; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003680}}
-.em-site-content .khaown-site-main {
-  margin-right: 32px; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003683}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003681}}
 .khaown-entry-title {
   margin: 20px 0 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003686}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003684}}
 .bypostauthor {
   background-color: #fff; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003689}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003687}}
 .post-navigation .nav-links {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -22863,18 +22867,18 @@ h1.khaown-site-title, .khaown-site-description {
   margin: auto;
   max-width: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003694}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003692}}
 nav.navigation.post-navigation {
   margin-top: 50px;
   padding-top: 25px;
   border-top: 1px solid #eee;
   clear: both; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003700}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003698}}
 nav .nav-links span.khaown-post-title {
   font-size: 13px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003703}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003701}}
 .post-navigation .nav-links a .meta-nav {
   color: #3c3c3c;
   font-weight: 600;
@@ -22883,76 +22887,76 @@ nav .nav-links span.khaown-post-title {
       -ms-user-select: none;
           user-select: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003708}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003706}}
 header.khaown-entry-header {
   margin-bottom: 30px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003711}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003709}}
 .sticky {
   background-color: #eee0; }
 
 @media all and (max-width: 991px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003716}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003714}}
   .em-site-content .khaown-site-main {
     margin-right: auto;
     padding: 15px; } }
 @media all and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003723}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003721}}
   .search-container input.form-control {
     height: 40px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003726}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003724}}
   input[type="submit"], button[type="submit"] {
     height: 40px;
     line-height: 40px;
     width: 129px !important; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003731}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003729}}
   .search-container {
     margin-top: 30px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003734}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003732}}
   h1.khaown-site-title, .khaown-site-description {
     margin-left: 0;
     margin-bottom: 5px;
     text-align: center !important; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003739}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003737}}
   .page-title .search-container {
     width: 280px;
     margin: 30px auto 0; } }
 @media all and (max-width: 425px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003748}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003746}}
   .em-products button.add-to-cart-btn {
     display: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003751}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003749}}
   .search-container .btn:last-child, .search-container .btn:last-of-type {
     margin-right: 10px; } }
 @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003760}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003758}}
   .form-inline .form-control {
     display: inline-block;
     width: 100%;
     vertical-align: middle; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003765}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003763}}
   .pagination .nav-links {
     margin-left: auto;
     padding: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003769}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003767}}
   .pagination .nav-links a.page-numbers {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     vertical-align: middle; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003773}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003771}}
   .pagination .nav-links svg.svg-icon {
     margin-top: -3px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003776}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/daowa\/wp-content\/themes\/khaown\/sass\/theme\/custom\/_custom\.scss}line{font-family:\00003774}}
   .comment {
     padding-left: 0; } }
 

@@ -161,7 +161,7 @@ function khaown_customize_register( $wp_customize ) {
 	$index_bgcolors[] = array(
 		'slug'=>'sidebar_background_color', 
 		'default' => '#f8f8f8',
-		'label' => 'Sidebar & Posts Background Color'
+		'label' => 'Posts Background Color'
 	);
 
 	// secondary color ( site description, sidebar headings, h3, h5, nav links on hover )
@@ -203,13 +203,49 @@ function khaown_customize_register( $wp_customize ) {
 	}
 
 	/**************************************
+	 * Sidebar Layout Section setup
+	**************************************/
+	$wp_customize->add_panel('sidebar_layout_panel', array(
+        'theme_supports' => '',
+		'title'			=> __('Sidebar', 'khaown'),
+		'description'	=> sprintf(__('Setup your theme Top header', 'khaown') ),
+		'priority' 		=> 42
+    ) );
+	
+	$wp_customize->add_section('blogpage_sidebar_layout', array(
+		'title'			=> __('Blog Page Sidebar', 'khaown'),
+		'panel'          => 'sidebar_layout_panel',
+		'priority' 		=> 41
+	) );
+
+	// Blog page sidebar setting setup
+	$wp_customize->add_setting('blog_page_sidebar_position', array(
+		'default'			=> __('right_sidebar', 'khaown'),
+		'sanitize_callback'  => 'esc_attr',
+		'type' 				=> 'theme_mod'
+	) );
+	
+	// Blog page sidebar Control setup
+	$wp_customize->add_control('blog_page_sidebar_position', array(
+		'label'			=> __('Blog Page Sidebar', 'khaown'),
+		'section' 		=> 'blogpage_sidebar_layout',
+		'type'			=> 'select',
+		'choices'  => array(
+			'no_sidebar' => _x( 'No Sidebar', 'no_sidebar', 'khaown' ),
+			'left_sidebar' => _x( 'Left Sidebar', 'left_sidebar', 'khaown' ),
+			'right_sidebar' => _x( 'Right Sidebar', 'right_sidebar', 'khaown' ),
+		),
+		'priority' 		=>  20
+	) );
+
+	/**************************************
 	 * // Typography Section setup
 	**************************************/
 	
 	$wp_customize->add_section('typography', array(
 		'title'			=> __('Typography', 'khaown'),
 		'description'	=> sprintf(__('Setup your theme typography', 'khaown') ),
-		'priority' 		=> 41
+		'priority' 		=> 43
 	) );
 
 	// default_or_customfont setting setup
@@ -372,16 +408,13 @@ function khaown_customize_register( $wp_customize ) {
 	) );
 
 
-
-
-
 	/**********************************
 		Heading Section setup
 	*********************************/
 	$wp_customize->add_section('heading', array(
 		'title'			=> __('Heading', 'khaown'),
 		'description'	=> sprintf(__('Setup your theme heading', 'khaown') ),
-		'priority' 		=> 41
+		'priority' 		=> 44
 	) );
 
 	// Heading setting setup
@@ -541,7 +574,7 @@ function khaown_customize_register( $wp_customize ) {
 	$wp_customize->add_section('nav_bar', array(
 		'title'			=> __('Navigation Bar', 'khaown'),
 		'description'	=> sprintf(__('Setup your theme Navigation', 'khaown') ),
-		'priority' 		=> 41
+		'priority' 		=> 45
 	) );
 
 	// Top header Site Desc color
@@ -636,7 +669,7 @@ function khaown_customize_register( $wp_customize ) {
 	$wp_customize->add_section('top_header', array(
 		'title'			=> __('Top Header', 'khaown'),
 		'description'	=> sprintf(__('Setup your theme Top header', 'khaown') ),
-		'priority' 		=> 41
+		'priority' 		=> 46
 	) );
 
 	// Heading setting setup
@@ -760,12 +793,14 @@ function khaown_customize_register( $wp_customize ) {
 		'priority' 		=>  20
 	) );
 
+	
+
 	/**********************************
 	Social Media Add customizer setup
     *********************************/
     $wp_customize->add_section( 'social_media_section', array(
 		'title'          => __( 'Social Accounts', 'khaown' ),
-        'priority' 		 => 41
+        'priority' 		 => 47
 	) );
 	
 	// Heading setting setup
