@@ -3,7 +3,7 @@ Contributors: motahar1
 Tags: blog, custom-logo, custom-colors, custom-menu, featured-images, one-column, two-columns, theme-options, translation-ready
 Requires at least: 4.9.6
 Tested up to: WordPress 5.2.4
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
