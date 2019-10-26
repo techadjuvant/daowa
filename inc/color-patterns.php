@@ -84,7 +84,7 @@ function khaown_custom_colors_css() {
 			a, a:visited, .widget a {
 				font-family: 'Varela Round', sans-serif;
 			}
-			h1, h2, h3, h4, h5, h6, p, ul, ol, pre, table, blockquote, input, button, select, textarea, .blog-posts .row p, span, button, .btn {
+			h1, h2, h3, h4, h5, h6, p, ul, ol, pre, table, blockquote, input, button, select, textarea, .blog-posts .row p, span, button, .btn, div {
 				font-family: 'Varela Round', sans-serif;
 			} 
 	";
@@ -99,9 +99,10 @@ function khaown_custom_colors_css() {
 			a, a:visited, .widget a {
 				font-family: " . get_theme_mod("font_family", "Rajdhani") . ";
 			}
-			h1, h2, h3, h4, h5, h6, p, ul, ol, pre, table, blockquote, input, button, select, textarea, .blog-posts .row p, span, button, .btn {
+			h1, h2, h3, h4, h5, h6, p, ul, ol, pre, table, blockquote, input, button, select, textarea, .blog-posts .row p, span, button, .btn, div {
 				font-family: " . get_theme_mod("font_family", "Rajdhani") . ";
 			}
+			
 		"; 
 	endif;
 
@@ -130,6 +131,9 @@ function khaown_custom_colors_css() {
 		.blog-posts .row .bg-color-blog-posts:hover {
 			box-shadow: 0 3px 3px 1px rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 1px 8px 0 rgba(0,0,0,.12);
 			transition: all .4s;
+		}
+		header nav, header .menu > li ul {
+			box-shadow: 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
 		}
 	";
 	endif;
@@ -177,6 +181,9 @@ function khaown_custom_colors_css() {
 			line-height: " . get_theme_mod("paragraph_line_height", "24") . "px;
 			letter-spacing: " . get_theme_mod("paragraph_letter_spacing", "0") . "px;
 			word-spacing: " . get_theme_mod("paragraph_word_spacing", "0") . "px;
+		}
+		svg.svg-icon {
+			fill: " . get_theme_mod("hover_link_color", "#a0a0a0") . ";
 		}
 
 		a:hover, a:visited, a:active, .widget a:hover, .post-navigation .nav-links a:hover, .entry .entry-meta a:hover, .entry .entry-footer a:hover {

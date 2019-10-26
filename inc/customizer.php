@@ -196,7 +196,7 @@ function khaown_customize_register( $wp_customize ) {
 				array('label' => $index_bg_color['label'], 
 				'section' => 'layout_design',
 				'priority' 		=>  20,
-				'settings' => $index_bg_color['slug']),
+				'settings' => $index_bg_color['slug'])
 				
 			)
 		);

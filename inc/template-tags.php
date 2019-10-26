@@ -24,13 +24,14 @@ if ( ! function_exists( 'khaown_posted_on' ) ) :
 			esc_attr( get_the_modified_date( DATE_W3C ) ),
 			esc_html( get_the_modified_date() )
 		);
-
+		
 		printf(
 			'<span class="posted-on">%1$s<a href="%2$s" rel="bookmark">%3$s</a></span>',
 			khaown_get_icon_svg( 'watch', 16 ),
 			esc_url( get_permalink() ),
 			$time_string
 		);
+
 	}
 endif;
 
