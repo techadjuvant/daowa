@@ -352,6 +352,53 @@ class CSS_Menu_Maker_Walker extends Walker {
 
 
 /**
+ * TGMPA class.
+ */
+require get_template_directory() . '/classes/class-tgm-plugin-activation.php';
+
+function khaown_require_plugins() {
+ 
+$plugins = array( 
+	/* The array to install plugins */
+
+		// This is an example of how to include a plugin from a GitHub repository in your theme.
+		// This presumes that the plugin code is based in the root of the GitHub repository
+		// and not in a subdirectory ('/src') of the repository.
+		array(
+			'name'      => 'Adminbar Link Comments to Pending',
+			'slug'      => 'adminbar-link-comments-to-pending',
+			'source'    => 'https://github.com/jrfnl/WP-adminbar-comments-to-pending/archive/master.zip',
+		),
+
+		// This is an example of how to include a plugin from the WordPress Plugin Repository.
+		array(
+			'name'      => 'BuddyPress',
+			'slug'      => 'buddypress',
+			'required'  => false,
+		),
+ );
+$config = array( 
+	/* The array to configure TGM Plugin Activation */
+
+	'id'           => 'khaown-tgmpa', // your unique TGMPA ID
+    'default_path' => get_stylesheet_directory() . '/lib/plugins/', // default absolute path
+    'menu'         => 'khaown-install-required-plugins', // menu slug
+    'has_notices'  => true, // Show admin notices
+    'dismissable'  => false, // the notices are NOT dismissable
+    'dismiss_msg'  => 'I really, really need you to install these plugins, okay?', // this message will be output at top of nag
+    'is_automatic' => true, // automatically activate plugins after installation
+    'message'      => '<!--Hey there.-->', // message to output right before the plugins table
+    'strings'      => array() // The array of message strings that TGM Plugin Activation uses
+ 
+);
+
+tgmpa( $plugins, $config );
+
+}
+
+
+
+/**
  * SVG Icons class.
  */
 require get_template_directory() . '/classes/class-khaown-svg-icons.php';
